@@ -21,8 +21,21 @@ namespace CapaVistaHRM
         {
             InitializeComponent();
             Mostrardes();
+            usuario = user;
+            LblUsuario.Text = usuario;
         }
-
+        /*Busquedas*/
+        void MostrarCOD(string dato)
+        {
+            DataTable dt = logic.consultaLogicacod2(dato);
+            dataGridView1.DataSource = dt;
+        }
+        void MostrarNOMA(string nom, string ap)
+        {
+            DataTable dt = logic.consultaLogicanoma2(nom, ap);
+            dataGridView1.DataSource = dt;
+        }
+        /**/
         private void Mantenimientodes_Load(object sender, EventArgs e)
         {
             progres();
@@ -72,6 +85,179 @@ namespace CapaVistaHRM
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Txt_id.Text = "";
+            Txt_nombre.Text = "";
+            Txt_puesto.Text = "";
+            Txt_sexo.Text = "";
+            Txt_direccion.Text = "";
+            Txt_area.Text = "";
+            Txt_apellido.Text = "";
+            Txt_correo.Text = "";
+            Txt_nit.Text = "";
+            Txt_Codigo.Text = "";
+            Txt_nombreb.Text = "";
+            Txt_apellidoB.Text = "";
+
+
+            Mostrardes();
+            progres();
+        }
+
+        private void btn_cod_Click(object sender, EventArgs e)
+        {
+            MostrarCOD(Txt_Codigo.Text);
+            progres();
+            ProgressBar1.Style = ProgressBarStyle.Marquee;
+            Txt_id.Text = "";
+            Txt_nombre.Text = "";
+            Txt_puesto.Text = "";
+            Txt_sexo.Text = "";
+            Txt_direccion.Text = "";
+            Txt_area.Text = "";
+            Txt_apellido.Text = "";
+            Txt_correo.Text = "";
+            Txt_nit.Text = "";
+            Txt_Codigo.Text = "";
+            btn_cod.Enabled = false;
+        }
+
+        private void btn_nomap_Click(object sender, EventArgs e)
+        {
+            MostrarNOMA(Txt_nombreb.Text, Txt_apellidoB.Text);
+            progres();
+            ProgressBar1.Style = ProgressBarStyle.Marquee;
+            Txt_id.Text = "";
+            Txt_nombre.Text = "";
+            Txt_puesto.Text = "";
+            Txt_sexo.Text = "";
+            Txt_direccion.Text = "";
+            Txt_area.Text = "";
+            Txt_apellido.Text = "";
+            Txt_correo.Text = "";
+            Txt_nit.Text = "";
+            Txt_nombreb.Text = "";
+            Txt_apellidoB.Text = "";
+            btn_nomap.Enabled = false;
+        }
+        /*Validaciones*/
+        public void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void numero(KeyPressEventArgs e)
+        {
+            char dosp = (char)58;
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == dosp)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar numeros");
+            }
+        }
+        public void letrasimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar letras y simbolos");
+            }
+        }
+        public void numerosimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        public void letracombo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        /********/
+        private void Txt_Codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+            btn_cod.Enabled = true;
+        }
+
+        private void Txt_nombreb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letrasimbolo(e);
+            btn_nomap.Enabled = true;
+        }
+
+        private void Txt_apellidoB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letrasimbolo(e);
+            btn_nomap.Enabled = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Ayuda.chm", "MDespedidos.html");
         }
     }
 }

@@ -54,6 +54,8 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.LblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbl_ID = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -123,10 +125,10 @@
             this.radioButton2.Checked = true;
             this.radioButton2.Location = new System.Drawing.Point(590, 17);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 25);
+            this.radioButton2.Size = new System.Drawing.Size(77, 25);
             this.radioButton2.TabIndex = 26;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Haber";
+            this.radioButton2.Text = "Sumar";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -135,9 +137,9 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(497, 17);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 25);
+            this.radioButton1.Size = new System.Drawing.Size(77, 25);
             this.radioButton1.TabIndex = 25;
-            this.radioButton1.Text = "Debe";
+            this.radioButton1.Text = "Restar";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -207,9 +209,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(9, 32);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 21);
+            this.label20.Size = new System.Drawing.Size(71, 21);
             this.label20.TabIndex = 23;
-            this.label20.Text = "Tiempo";
+            this.label20.Text = "Tiempo:";
             // 
             // Txt_emplecon
             // 
@@ -258,11 +260,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(420, 17);
+            this.label9.Location = new System.Drawing.Point(411, 17);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 21);
+            this.label9.Size = new System.Drawing.Size(75, 21);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Cuenta";
+            this.label9.Text = "Cuenta:";
             // 
             // label10
             // 
@@ -276,7 +278,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 63);
+            this.label11.Location = new System.Drawing.Point(12, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 21);
             this.label11.TabIndex = 8;
@@ -311,7 +313,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
             this.LblUsuario,
-            this.ProgressBar1});
+            this.ProgressBar1,
+            this.toolStripStatusLabel1,
+            this.lbl_ID});
             this.statusStrip.Location = new System.Drawing.Point(0, 621);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(726, 22);
@@ -337,6 +341,20 @@
             this.ProgressBar1.Name = "ProgressBar1";
             this.ProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(18, 17);
+            this.toolStripStatusLabel1.Text = "ID";
+            // 
+            // lbl_ID
+            // 
+            this.lbl_ID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_ID.Name = "lbl_ID";
+            this.lbl_ID.Size = new System.Drawing.Size(16, 17);
+            this.lbl_ID.Text = "...";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DodgerBlue;
@@ -359,6 +377,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(65, 61);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -375,7 +394,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(154, 23);
+            this.label15.Location = new System.Drawing.Point(120, 23);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(413, 39);
             this.label15.TabIndex = 0;
@@ -391,10 +410,11 @@
             this.Controls.Add(this.GPB_info);
             this.Controls.Add(this.Cbo_sexo);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Asignacioncone";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "3017 - Asignacion de comiciones";
+            this.Text = "3017 - Asignacion de conceptos";
             this.Load += new System.EventHandler(this.Asignacioncone_Load);
             this.Cbo_sexo.ResumeLayout(false);
             this.Cbo_sexo.PerformLayout();
@@ -444,5 +464,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lbl_ID;
     }
 }

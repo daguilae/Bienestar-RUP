@@ -197,11 +197,13 @@
             this.Cbo_sexo.Size = new System.Drawing.Size(359, 29);
             this.Cbo_sexo.TabIndex = 30;
             this.Cbo_sexo.Text = "--Seleccione--";
+            this.Cbo_sexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cbo_sexo_KeyPress);
             // 
             // Txt_direccion
             // 
             this.Txt_direccion.Enabled = false;
             this.Txt_direccion.Location = new System.Drawing.Point(640, 202);
+            this.Txt_direccion.MaxLength = 45;
             this.Txt_direccion.Name = "Txt_direccion";
             this.Txt_direccion.Size = new System.Drawing.Size(359, 27);
             this.Txt_direccion.TabIndex = 29;
@@ -210,6 +212,7 @@
             // 
             this.Txt_nit.Enabled = false;
             this.Txt_nit.Location = new System.Drawing.Point(118, 245);
+            this.Txt_nit.MaxLength = 13;
             this.Txt_nit.Name = "Txt_nit";
             this.Txt_nit.Size = new System.Drawing.Size(359, 27);
             this.Txt_nit.TabIndex = 28;
@@ -218,6 +221,7 @@
             // 
             this.Txt_cui.Enabled = false;
             this.Txt_cui.Location = new System.Drawing.Point(118, 202);
+            this.Txt_cui.MaxLength = 13;
             this.Txt_cui.Name = "Txt_cui";
             this.Txt_cui.Size = new System.Drawing.Size(359, 27);
             this.Txt_cui.TabIndex = 27;
@@ -279,6 +283,7 @@
             // 
             this.Txt_correo.Enabled = false;
             this.Txt_correo.Location = new System.Drawing.Point(640, 72);
+            this.Txt_correo.MaxLength = 40;
             this.Txt_correo.Name = "Txt_correo";
             this.Txt_correo.Size = new System.Drawing.Size(359, 27);
             this.Txt_correo.TabIndex = 13;
@@ -314,6 +319,7 @@
             // 
             this.Txt_apellido.Enabled = false;
             this.Txt_apellido.Location = new System.Drawing.Point(118, 114);
+            this.Txt_apellido.MaxLength = 40;
             this.Txt_apellido.Name = "Txt_apellido";
             this.Txt_apellido.Size = new System.Drawing.Size(359, 27);
             this.Txt_apellido.TabIndex = 7;
@@ -331,6 +337,7 @@
             // 
             this.Txt_nombre.Enabled = false;
             this.Txt_nombre.Location = new System.Drawing.Point(118, 66);
+            this.Txt_nombre.MaxLength = 40;
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(359, 27);
             this.Txt_nombre.TabIndex = 5;
@@ -380,8 +387,9 @@
             this.pictureBox2.Location = new System.Drawing.Point(6, 14);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -426,6 +434,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1145, 204);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // dataSet11
@@ -475,7 +484,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Empleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "3017 - Empleados";
@@ -529,10 +539,10 @@
         private CapaVista.Combo combo1;
         private CapaVista.DataSet1 dataSet11;
         private CapaVista.Combo combo2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel LblUsuario;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

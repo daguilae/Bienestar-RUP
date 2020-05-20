@@ -24,12 +24,13 @@ namespace CapaVistaHRM
         string fechaf;
         string DBAB;
         string ID;
+        string vacio = "";
       
         ModeloEmpleado logic = new ModeloEmpleado();
         public Conceptos(string user)
         {
             InitializeComponent();
-            user = usuario;
+            usuario = user;
             LblUsuario.Text = usuario;
             Mostraremp();
             combo3.llenarse("tipo_concepto", "id_tipo", "nombre");
@@ -123,6 +124,7 @@ namespace CapaVistaHRM
                 Mostrarcon2(Txt_Codigo2.Text);
                 dataGridView2.Columns[2].DefaultCellStyle.Format = "yyyy-MM-dd";
                 dataGridView2.Columns[3].DefaultCellStyle.Format = "yyyy-MM-dd";
+                BTN_nuevo.Enabled = true;
 
             }
             else
@@ -141,11 +143,13 @@ namespace CapaVistaHRM
                 fechafin = dataGridView2.CurrentRow.Cells[3].FormattedValue.ToString();
                 Txt_montocon.Text = dataGridView2.CurrentRow.Cells[5].Value.ToString();
                 DBAB = dataGridView2.CurrentRow.Cells[6].Value.ToString();
-                 combo3.Enabled = true;
-                Txt_montocon.Enabled = true;
-                radioButton1.Enabled = true;
-                radioButton2.Enabled = true;
-                checkBox1.Enabled = true;
+                checkBox1.Checked = false;
+                combo3.Enabled = false;
+                Txt_montocon.Enabled = false;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                checkBox1.Enabled = false;
+                Btn_eliminar.Enabled = true; 
 
                 if (fechaini == "1111-11-11")
                 {
@@ -194,6 +198,84 @@ namespace CapaVistaHRM
         {
 
         }
+        /*Validaciones*/
+        public void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void numero(KeyPressEventArgs e)
+        {
+            char dosp = (char)58;
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;  
+            }
+            else if (e.KeyChar == dosp)
+            {
+                e.Handled = false;   
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar numeros");
+            }
+        }
+        public void letrasimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar letras y simbolos");
+            }
+        }
+        public void numerosimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        /********/
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -236,8 +318,19 @@ namespace CapaVistaHRM
             Mostrarcon2(Txt_Codigo2.Text);
 
             Txt_montocon.Text = "";
+            combo3.texto(vacio);
             radioButton2.Checked = true;
             checkBox1.Checked = false;
+            combo3.Enabled = false;
+            Txt_montocon.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            checkBox1.Enabled = false;
+            btn_can.Enabled = false;
+            BTN_nuevo.Enabled = true;
+            Btn_eliminar.Enabled = false;
+            BTN_insertar.Enabled = false;
+            Txt_emplecon.Text = "";
             progres();
        
 
@@ -248,8 +341,20 @@ namespace CapaVistaHRM
             logic.nuevoQuery(crearDelete());
             progres();
             Mostrarcon2(Txt_Codigo2.Text);
-            Txt_emplecon.Text = "";
             Txt_montocon.Text = "";
+            Txt_emplecon.Text = "";
+            combo3.texto(vacio);
+            radioButton2.Checked = true;
+            checkBox1.Checked = false;
+            combo3.Enabled = false;
+            Txt_montocon.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            checkBox1.Enabled = false;
+            btn_can.Enabled = false;
+            BTN_nuevo.Enabled = true;
+            Btn_eliminar.Enabled = false;
+            BTN_insertar.Enabled = false;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -261,6 +366,7 @@ namespace CapaVistaHRM
         {
             MostrarCOD(Txt_Codigo.Text); 
             progres();
+            Txt_Codigo.Text = "";
             ProgressBar1.Style = ProgressBarStyle.Marquee;
         }
 
@@ -318,6 +424,9 @@ namespace CapaVistaHRM
         {
             MostrarNOMA(TXT_NOM.Text,TXT_APE.Text);
                  progres();
+            TXT_APE.Text = "";
+            TXT_NOM.Text = "";
+            
         }
 
         private void button4_Click_2(object sender, EventArgs e)
@@ -327,6 +436,59 @@ namespace CapaVistaHRM
             radioButton1.Enabled = true;
             radioButton2.Enabled = true;
             checkBox1.Enabled = true;
+            btn_can.Enabled = true;
+            Btn_eliminar.Enabled = false; ;
+            BTN_insertar.Enabled = true;
+            BTN_nuevo.Enabled = false;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Mostraremp();
+            TXT_APE.Text = "";
+            TXT_NOM.Text = "";
+            Txt_Codigo.Text = "";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            combo3.Enabled = false;
+            Txt_montocon.Enabled = false;
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            checkBox1.Enabled = false;
+            btn_can.Enabled = false;
+            Txt_montocon.Text = "";
+            combo3.texto(vacio);
+            Btn_eliminar.Enabled = false;
+            BTN_insertar.Enabled = false;
+            BTN_nuevo.Enabled = true;
+
+        }
+
+        private void Txt_Codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+        }
+
+        private void TXT_NOM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letrasimbolo(e);
+        }
+
+        private void TXT_APE_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letrasimbolo(e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Ayuda.chm", "mconceptos.html");
         }
     }
 }

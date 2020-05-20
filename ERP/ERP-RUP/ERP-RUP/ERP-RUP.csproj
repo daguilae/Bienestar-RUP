@@ -40,7 +40,8 @@
     <Reference Include="CapaVistaCONTA">
       <HintPath>..\..\MODULOS\FRM\FRM-Conta-master\FRM\CapaVistaFRM\bin\Debug\CapaVistaCONTA.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaHRM">
+    <Reference Include="CapaVistaHRM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\HRM\HRM-Juan-master\HRM-Juan\HRM\CapaVistaHRM\bin\Debug\CapaVistaHRM.dll</HintPath>
     </Reference>
     <Reference Include="CapaVistaMRP">

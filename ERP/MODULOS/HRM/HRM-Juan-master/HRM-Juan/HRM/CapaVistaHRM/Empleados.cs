@@ -17,16 +17,17 @@ namespace CapaVistaHRM
 {
     public partial class Empleados : Form
     {
-        OdbcConnection conn = new OdbcConnection("Dsn=ERP");
         ModeloEmpleado logic = new ModeloEmpleado();
-        string fechana;
         string usuario;
         string emple;
+        string vacio = "";
+        string puesto;
+        string area;
         public Empleados(string user)
         {
             InitializeComponent();
             Mostraremp();
-            user = usuario;
+            usuario = user;
             LblUsuario.Text = usuario;
             DTP_fechana.CustomFormat = "yyyy-MM-dd";
             DTP_fechana.Format = DateTimePickerFormat.Custom;
@@ -52,7 +53,7 @@ namespace CapaVistaHRM
 
         string crearUpdate()// crea el query de update
         {
-			string query = "UPDATE `empleados` SET `nombre` = '"+Txt_nombre.Text+"', `apellido` = '"+Txt_apellido.Text+"', `sexo` = '"+Cbo_sexo.Text+"', `fecha_de_nacimiento` = '"+DTP_fechana.Text+"', `cui` = '"+Txt_cui.Text+"', `correo` = '"+Txt_correo.Text+"', `id_puesto` = '"+ combo1.obtener()+ "', `id_area` = '" + combo2.obtener() + "', `nit` = '" + Txt_nit.Text+"', `direccion` = '"+Txt_direccion.Text+"' WHERE `empleados`.`id_empleado` =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			string query = "UPDATE `empleados` SET `nombre` = '"+Txt_nombre.Text+"', `apellido` = '"+Txt_apellido.Text+"', `sexo` = '"+Cbo_sexo.Text+"', `fecha_de_nacimiento` = '"+DTP_fechana.Text+"', `cui` = '"+Txt_cui.Text+"', `correo` = '"+Txt_correo.Text+"', `id_puesto` = '"+ combo1.ObtenerIndif()+ "', `id_area` = '" + combo2.ObtenerIndif() + "', `nit` = '" + Txt_nit.Text+"', `direccion` = '"+Txt_direccion.Text+"' WHERE `empleados`.`id_empleado` =" + dataGridView1.CurrentRow.Cells[0].Value.ToString();
 			
 
 			return query;
@@ -79,12 +80,13 @@ namespace CapaVistaHRM
                 DTP_fechana.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 Txt_cui.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 Txt_correo.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                combo1.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                combo2.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+               puesto = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                area = dataGridView1.CurrentRow.Cells[8].Value.ToString();
                 Txt_nit.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
                 Txt_direccion.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
                 emple = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                
+                combo1.texto(puesto);
+                combo2.texto(area);
                 Btn_concep.Enabled = true;
                 Btn_elimi.Enabled = true;
                 Btn_Modi.Enabled = true;
@@ -101,7 +103,6 @@ namespace CapaVistaHRM
                 Txt_direccion.Enabled = true;
                 progres();
 
-                Mostraremp(); 
             }
             else
             {
@@ -120,6 +121,7 @@ namespace CapaVistaHRM
             Txt_direccion.Text = "";
             Txt_cui.Text = "";
             Txt_correo.Text = "";
+            Cbo_sexo.Text = "";
             Btn_concep.Enabled = false;
             Btn_elimi.Enabled = false;
             Btn_Modi.Enabled = false;
@@ -134,6 +136,8 @@ namespace CapaVistaHRM
             combo1.Enabled = false;
             combo2.Enabled = false;
             Txt_direccion.Enabled = false;
+            combo1.texto(vacio);
+            combo2.texto(vacio);
             progres();
         }
 
@@ -176,6 +180,120 @@ namespace CapaVistaHRM
         private void Empleados_Load(object sender, EventArgs e)
         {
             progres();
+        }
+        /*Validaciones*/
+        public void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void numero(KeyPressEventArgs e)
+        {
+            char dosp = (char)58;
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == dosp)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar numeros");
+            }
+        }
+        public void letrasimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("En ese campo solo puede ingresar letras y simbolos");
+            }
+        }
+        public void numerosimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+  
+        public void letracombo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        /********/
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Cbo_sexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            letracombo(e);
+        }
+
+        private void ayudaRup1_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Ayuda.chm", "mempleados.html");
         }
     }
 }

@@ -79,12 +79,12 @@ namespace CapaVistaHRM
         /*Busquedas*/
         void MostrarCOD(string dato)
         {
-            DataTable dt = logic.consultaLogicacod2(dato);
+            DataTable dt = logic.consultaLogicacod(dato);
             dataGridView1.DataSource = dt;
         }
         void MostrarNOMA(string nom, string ap)
         {
-            DataTable dt = logic.consultaLogicanoma2(nom, ap);
+            DataTable dt = logic.consultaLogicanoma(nom, ap);
             dataGridView1.DataSource = dt;
         }
         /**/
@@ -141,6 +141,7 @@ namespace CapaVistaHRM
         {
             MostrarCOD(Txt_Codigo.Text);
             progres();
+            Txt_Codigo.Text = "";
             ProgressBar1.Style = ProgressBarStyle.Marquee;
         }
 
@@ -148,6 +149,92 @@ namespace CapaVistaHRM
         {
             MostrarNOMA(Txt_nombreb.Text, Txt_apellidoB.Text);
             progres();
+            Txt_apellidoB.Text = "";
+            Txt_nombreb.Text = "";
+            ProgressBar1.Style = ProgressBarStyle.Marquee;
+        }
+        public void letra(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void numero(KeyPressEventArgs e)
+        {
+            char dosp = (char)58;
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == dosp)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void letrasimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        public void numerosimbolo(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (char.IsPunctuation(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Txt_Codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            numero(e);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Ayuda.chm", "Despedir.html");
         }
     }
 }
