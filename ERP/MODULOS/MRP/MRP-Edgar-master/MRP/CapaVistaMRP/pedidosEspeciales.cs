@@ -21,7 +21,7 @@ namespace CapaVistaMRP
         {
             InitializeComponent();
 
-            cmb_productos.llenarse("productos","id_producto","nombre_producto");
+            cmb_productos.llenarse2("productos","id_producto","nombre_producto","id_tipo_producto","1");
             grb_detalle.Enabled = false;
             lbl_noOrden.Text = mo.idmax("produccion_encabezados", "cod_orden");
            
@@ -52,13 +52,25 @@ namespace CapaVistaMRP
 
         private void Btn_agregar_Click(object sender, EventArgs e )
         {
+            string buscar = cmb_productos.texto2();
+            int existe = cmb_productos.existe(buscar);
+            decimal num = Nud_cantidad.Value;
 
-            string primero = cmb_productos.ObtenerIndif();
-            string cantidad = Nud_cantidad.Value.ToString();
-            string fecha = Lbl_date.Text;
-            string fechalim = Dtp_fechalim.Text;
-            
-            Dgb_pedidosEspeciales.Rows.Add( primero, cantidad,fecha, fechalim);
+            if (existe != -1 && buscar != " " && num != 0)
+            {
+                string primero = cmb_productos.ObtenerIndif();
+                string cantidad = Nud_cantidad.Value.ToString();
+                string fecha = Lbl_date.Text;
+                string fechalim = Dtp_fechalim.Text;
+
+                Dgb_pedidosEspeciales.Rows.Add(primero, cantidad, fecha, fechalim);
+
+            }
+            else {
+
+                MessageBox.Show("Ingrese un producto valido y cantidades mayores a 0 ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
         }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
@@ -74,15 +86,42 @@ namespace CapaVistaMRP
         private void Button1_Click_1(object sender, EventArgs e)
         {
             string idmax = lbl_noOrden.Text;
-
-            foreach (DataGridViewRow row in Dgb_pedidosEspeciales.Rows)
+            if (Dgb_pedidosEspeciales.Rows.Count > 0)
             {
-                string cadena = "INSERT INTO produccion_detalles (id_detalle, cod_orden, id_producto, cantidad_producto, estado) VALUES(NULL," + idmax + ",'" + row.Cells[0].Value.ToString()  + "'," + row.Cells[1].Value.ToString() + ",1);";
-                mo.insertar(cadena);
-            }
+                foreach (DataGridViewRow row in Dgb_pedidosEspeciales.Rows)
+                {
+                    string cadena = "INSERT INTO produccion_detalles (id_detalle, cod_orden, id_producto, cantidad_producto, estado) VALUES(NULL," + idmax + ",'" + row.Cells[0].Value.ToString() + "'," + row.Cells[1].Value.ToString() + ",1);";
+                    mo.insertar(cadena);
+                }
 
-            MessageBox.Show("Orden Generada");
-            this.Close();
+                MessageBox.Show("Orden Generada");
+                this.Close();
+            }
+            else {
+
+                MessageBox.Show("Agregue los productos a la orden ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+            }
+        }
+
+        private void Grb_detalle_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Grb_encabezado_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PedidosEspeciales_Load(object sender, EventArgs e)
+        {
+            Dtp_fechalim.MinDate = DateTime.Now.AddDays(7);
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayuda-MRP/AyudaMRP.chm", "AyudaPedidosEspeciales.html"); 
         }
     }
 }

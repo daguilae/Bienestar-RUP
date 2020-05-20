@@ -44,7 +44,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\HRM\HRM-Juan-master\HRM-Juan\HRM\CapaVistaHRM\bin\Debug\CapaVistaHRM.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaMRP">
+    <Reference Include="CapaVistaMRP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\MRP\MRP-Edgar-master\MRP\CapaVistaMRP\bin\Debug\CapaVistaMRP.dll</HintPath>
     </Reference>
     <Reference Include="CapaVistaSCM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">

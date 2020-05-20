@@ -87,3 +87,4 @@ C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControlad
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.dll
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaDatos.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\InputKey.dll

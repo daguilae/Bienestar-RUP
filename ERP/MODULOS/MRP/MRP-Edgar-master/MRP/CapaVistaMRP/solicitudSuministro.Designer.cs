@@ -37,8 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.Cbo_materia = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
@@ -52,13 +50,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.Cbo_Producto = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.grb_detalle.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -66,8 +62,8 @@
             this.grb_encabezado.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -100,8 +96,6 @@
             this.grb_detalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.grb_detalle.Controls.Add(this.tableLayoutPanel2);
             this.grb_detalle.Controls.Add(this.numericUpDown1);
-            this.grb_detalle.Controls.Add(this.comboBox1);
-            this.grb_detalle.Controls.Add(this.label9);
             this.grb_detalle.Controls.Add(this.Cbo_materia);
             this.grb_detalle.Controls.Add(this.label3);
             this.grb_detalle.Controls.Add(this.lbl_cantidad);
@@ -113,6 +107,7 @@
             this.grb_detalle.TabIndex = 11;
             this.grb_detalle.TabStop = false;
             this.grb_detalle.Text = "Detalle";
+            this.grb_detalle.Enter += new System.EventHandler(this.Grb_detalle_Enter);
             // 
             // tableLayoutPanel2
             // 
@@ -185,27 +180,10 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(212, 140);
+            this.numericUpDown1.Location = new System.Drawing.Point(221, 99);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(75, 30);
             this.numericUpDown1.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(223, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 30);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 23);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Unidad de medida";
             // 
             // Cbo_materia
             // 
@@ -227,7 +205,7 @@
             // lbl_cantidad
             // 
             this.lbl_cantidad.AutoSize = true;
-            this.lbl_cantidad.Location = new System.Drawing.Point(24, 142);
+            this.lbl_cantidad.Location = new System.Drawing.Point(33, 101);
             this.lbl_cantidad.Name = "lbl_cantidad";
             this.lbl_cantidad.Size = new System.Drawing.Size(99, 23);
             this.lbl_cantidad.TabIndex = 0;
@@ -243,8 +221,6 @@
             this.grb_encabezado.Controls.Add(this.label7);
             this.grb_encabezado.Controls.Add(this.label4);
             this.grb_encabezado.Controls.Add(this.dateTimePicker1);
-            this.grb_encabezado.Controls.Add(this.Cbo_Producto);
-            this.grb_encabezado.Controls.Add(this.label2);
             this.grb_encabezado.Controls.Add(this.label1);
             this.grb_encabezado.Controls.Add(this.lbl_fecha);
             this.grb_encabezado.ForeColor = System.Drawing.Color.Black;
@@ -344,23 +320,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 30);
             this.dateTimePicker1.TabIndex = 6;
             // 
-            // Cbo_Producto
-            // 
-            this.Cbo_Producto.FormattingEnabled = true;
-            this.Cbo_Producto.Location = new System.Drawing.Point(223, 134);
-            this.Cbo_Producto.Name = "Cbo_Producto";
-            this.Cbo_Producto.Size = new System.Drawing.Size(200, 30);
-            this.Cbo_Producto.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Producto";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -395,16 +354,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(704, 150);
             this.tableLayoutPanel1.TabIndex = 17;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 879);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1151, 144);
-            this.dataGridView2.TabIndex = 16;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
@@ -416,6 +365,16 @@
             this.pictureBox1.Size = new System.Drawing.Size(116, 144);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(8, 879);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1151, 144);
+            this.dataGridView2.TabIndex = 16;
             // 
             // solicitudSuministro
             // 
@@ -446,8 +405,8 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,16 +422,12 @@
         private System.Windows.Forms.GroupBox grb_encabezado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox Cbo_Producto;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_fecha;
         private System.Windows.Forms.ComboBox Cbo_prioridad;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView2;

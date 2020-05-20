@@ -16,8 +16,9 @@ namespace CapaVistaMRP
         public mantenimientoInvConfg(string user)
         {
             InitializeComponent();
+         
             usuario = user;
-            string[] alias = { "cod_config","Mes", "max", "repedido", "minimo","estado" };
+            string[] alias = { "cod_config", "Temporada", "max", "repedido", "minimo", "estado" };
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             Color Hotel = Color.FromArgb(253, 254, 254);
@@ -28,17 +29,21 @@ namespace CapaVistaMRP
             navegador1.asignarNombreForm("");
         }
 
-        private void Navegador1_Load(object sender, EventArgs e)
-        {
+     
 
-        }
+        
 
-        private void MantenimientoInvConfg_Load(object sender, EventArgs e)
+        private void MantenimientoInvConfg_Load_1(object sender, EventArgs e)
         {
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario);
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayuda-MRP/AyudaMRP.chm", "AyudaMantenimientoConf.html" );
         }
     }
 }
