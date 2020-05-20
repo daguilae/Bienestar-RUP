@@ -32,12 +32,14 @@
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.mRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.sCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.sCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.cONTABILIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.bANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -70,12 +72,15 @@
 			this.hRMToolStripMenuItem.Text = "HRM";
 			this.hRMToolStripMenuItem.Click += new System.EventHandler(this.HRMToolStripMenuItem_Click);
 			// 
-			// mRPToolStripMenuItem
+			// fRMToolStripMenuItem
 			// 
-			this.mRPToolStripMenuItem.Name = "mRPToolStripMenuItem";
-			this.mRPToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.mRPToolStripMenuItem.Text = "MRP";
-			this.mRPToolStripMenuItem.Click += new System.EventHandler(this.MRPToolStripMenuItem_Click);
+			this.fRMToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cONTABILIDADToolStripMenuItem,
+            this.bANCOSToolStripMenuItem});
+			this.fRMToolStripMenuItem.Name = "fRMToolStripMenuItem";
+			this.fRMToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+			this.fRMToolStripMenuItem.Text = "FRM";
+			this.fRMToolStripMenuItem.Click += new System.EventHandler(this.FRMToolStripMenuItem_Click);
 			// 
 			// sCMToolStripMenuItem
 			// 
@@ -84,12 +89,12 @@
 			this.sCMToolStripMenuItem.Text = "SCM";
 			this.sCMToolStripMenuItem.Click += new System.EventHandler(this.SCMToolStripMenuItem_Click);
 			// 
-			// fRMToolStripMenuItem
+			// mRPToolStripMenuItem
 			// 
-			this.fRMToolStripMenuItem.Name = "fRMToolStripMenuItem";
-			this.fRMToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-			this.fRMToolStripMenuItem.Text = "FRM";
-			this.fRMToolStripMenuItem.Click += new System.EventHandler(this.FRMToolStripMenuItem_Click);
+			this.mRPToolStripMenuItem.Name = "mRPToolStripMenuItem";
+			this.mRPToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.mRPToolStripMenuItem.Text = "MRP";
+			this.mRPToolStripMenuItem.Click += new System.EventHandler(this.MRPToolStripMenuItem_Click);
 			// 
 			// seguridadToolStripMenuItem
 			// 
@@ -102,6 +107,20 @@
 			this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
 			this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
 			this.ayudaToolStripMenuItem.Text = "Ayuda";
+			// 
+			// cONTABILIDADToolStripMenuItem
+			// 
+			this.cONTABILIDADToolStripMenuItem.Name = "cONTABILIDADToolStripMenuItem";
+			this.cONTABILIDADToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.cONTABILIDADToolStripMenuItem.Text = "CONTABILIDAD";
+			this.cONTABILIDADToolStripMenuItem.Click += new System.EventHandler(this.CONTABILIDADToolStripMenuItem_Click);
+			// 
+			// bANCOSToolStripMenuItem
+			// 
+			this.bANCOSToolStripMenuItem.Name = "bANCOSToolStripMenuItem";
+			this.bANCOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.bANCOSToolStripMenuItem.Text = "BANCOS";
+			this.bANCOSToolStripMenuItem.Click += new System.EventHandler(this.BANCOSToolStripMenuItem_Click);
 			// 
 			// ERP_RUP
 			// 
@@ -135,6 +154,8 @@
 		private System.Windows.Forms.ToolStripMenuItem fRMToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cONTABILIDADToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem bANCOSToolStripMenuItem;
 	}
 }
 
