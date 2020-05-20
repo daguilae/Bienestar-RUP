@@ -37,7 +37,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaLogica\bin\Debug\CapaLogica.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaCONTA">
+    <Reference Include="CapaVistaCONTA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\FRM\FRM-Conta-master\FRM\CapaVistaFRM\bin\Debug\CapaVistaCONTA.dll</HintPath>
     </Reference>
     <Reference Include="CapaVistaFRM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
