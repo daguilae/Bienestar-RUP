@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_manteniminto));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
@@ -51,19 +53,37 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(844, 721);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(849, 727);
             this.Tbl_movimientoInventario.TabIndex = 6;
             // 
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_titulo.Location = new System.Drawing.Point(3, 3);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(838, 64);
+            this.Pnl_titulo.Size = new System.Drawing.Size(843, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackgroundImage = global::CapaVistaSCM.Properties.Resources.information;
+            this.Btn_ayuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_ayuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_ayuda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Location = new System.Drawing.Point(685, 0);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(37, 64);
+            this.Btn_ayuda.TabIndex = 4;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_MovInventario
             // 
@@ -76,9 +96,9 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(700, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(722, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
-            this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
+            this.Btn_MovInventario.Size = new System.Drawing.Size(121, 64);
             this.Btn_MovInventario.TabIndex = 3;
             this.Btn_MovInventario.UseVisualStyleBackColor = false;
             // 
@@ -99,14 +119,15 @@
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(838, 645);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(843, 651);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
             // Nav_Mantenimiento
             // 
             this.Nav_Mantenimiento.BackColor = System.Drawing.Color.White;
             this.Nav_Mantenimiento.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 3);
+            this.Nav_Mantenimiento.Location = new System.Drawing.Point(3, 1);
+            this.Nav_Mantenimiento.Margin = new System.Windows.Forms.Padding(4);
             this.Nav_Mantenimiento.Name = "Nav_Mantenimiento";
             this.Nav_Mantenimiento.Size = new System.Drawing.Size(838, 650);
             this.Nav_Mantenimiento.TabIndex = 0;
@@ -115,12 +136,15 @@
             // Frm_manteniminto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(844, 721);
+            this.ClientSize = new System.Drawing.Size(849, 727);
             this.Controls.Add(this.Tbl_movimientoInventario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_manteniminto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento";
+            this.TopMost = true;
             this.Tbl_movimientoInventario.ResumeLayout(false);
             this.Pnl_titulo.ResumeLayout(false);
             this.Pnl_titulo.PerformLayout();
@@ -137,5 +161,6 @@
         private System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Panel Pnl_desarrollo;
         private CapaDeDiseno.Navegador Nav_Mantenimiento;
+        private System.Windows.Forms.Button Btn_ayuda;
     }
 }

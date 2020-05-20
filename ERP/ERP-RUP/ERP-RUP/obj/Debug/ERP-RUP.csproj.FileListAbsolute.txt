@@ -84,3 +84,6 @@ C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloMRP
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloSCM.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorSCM.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorMRP.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaDatos.pdb

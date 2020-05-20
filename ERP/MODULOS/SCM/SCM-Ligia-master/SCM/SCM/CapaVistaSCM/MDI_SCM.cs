@@ -35,6 +35,7 @@ namespace CapaVistaSCM
             lista.TopLevel = false;
             lista.TopMost = true;
             panel1.Controls.Add(lista);
+            lista.WindowState = FormWindowState.Maximized;
         }
 
         private void MDI_SCM1_Load(object sender, EventArgs e)
@@ -125,8 +126,7 @@ namespace CapaVistaSCM
 
         private void trasladoDeInventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_trasladoDeProducto trasladoProducto = null;
-            listas(2, trasladoProducto);
+
         }
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
