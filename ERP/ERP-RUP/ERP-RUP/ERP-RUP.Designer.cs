@@ -33,13 +33,13 @@
 			this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cONTABILIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.bANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.mRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-			this.cONTABILIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.bANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -82,6 +82,20 @@
 			this.fRMToolStripMenuItem.Text = "FRM";
 			this.fRMToolStripMenuItem.Click += new System.EventHandler(this.FRMToolStripMenuItem_Click);
 			// 
+			// cONTABILIDADToolStripMenuItem
+			// 
+			this.cONTABILIDADToolStripMenuItem.Name = "cONTABILIDADToolStripMenuItem";
+			this.cONTABILIDADToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.cONTABILIDADToolStripMenuItem.Text = "CONTABILIDAD";
+			this.cONTABILIDADToolStripMenuItem.Click += new System.EventHandler(this.CONTABILIDADToolStripMenuItem_Click);
+			// 
+			// bANCOSToolStripMenuItem
+			// 
+			this.bANCOSToolStripMenuItem.Name = "bANCOSToolStripMenuItem";
+			this.bANCOSToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.bANCOSToolStripMenuItem.Text = "BANCOS";
+			this.bANCOSToolStripMenuItem.Click += new System.EventHandler(this.BANCOSToolStripMenuItem_Click);
+			// 
 			// sCMToolStripMenuItem
 			// 
 			this.sCMToolStripMenuItem.Name = "sCMToolStripMenuItem";
@@ -108,27 +122,12 @@
 			this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
 			this.ayudaToolStripMenuItem.Text = "Ayuda";
 			// 
-			// cONTABILIDADToolStripMenuItem
-			// 
-			this.cONTABILIDADToolStripMenuItem.Name = "cONTABILIDADToolStripMenuItem";
-			this.cONTABILIDADToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.cONTABILIDADToolStripMenuItem.Text = "CONTABILIDAD";
-			this.cONTABILIDADToolStripMenuItem.Click += new System.EventHandler(this.CONTABILIDADToolStripMenuItem_Click);
-			// 
-			// bANCOSToolStripMenuItem
-			// 
-			this.bANCOSToolStripMenuItem.Name = "bANCOSToolStripMenuItem";
-			this.bANCOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.bANCOSToolStripMenuItem.Text = "BANCOS";
-			this.bANCOSToolStripMenuItem.Click += new System.EventHandler(this.BANCOSToolStripMenuItem_Click);
-			// 
 			// ERP_RUP
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(632, 453);
 			this.Controls.Add(this.menuStrip);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
 			this.Name = "ERP_RUP";
