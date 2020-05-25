@@ -69,5 +69,15 @@ namespace ERP_RUP.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO_BIENESTAR_2 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO BIENESTAR 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

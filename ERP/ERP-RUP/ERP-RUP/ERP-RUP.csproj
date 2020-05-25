@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LOGO BIENESTAR.ico" />
+    <None Include="Resources\LOGO BIENESTAR 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
