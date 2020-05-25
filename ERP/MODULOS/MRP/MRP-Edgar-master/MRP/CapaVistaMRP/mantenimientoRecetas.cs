@@ -157,7 +157,7 @@ namespace CapaVistaMRP
         {
             string prod2 = cmb_productos.texto2();
             int existe = cmb_productos.existe(prod2);
-            if ( existe != -1 && existe != 0)
+            if ( existe != -1 && prod2 != "")
             {
                 string sql = "Select maximo from configuraciones_inventarios ci INNER JOIN  inventarios_produccion ip on ci.cod_config = ip.cod_config WHERE ip.id_producto = '" + cmb_productos.ObtenerIndif() + "' ;";
                 string cant = mo.consulta(sql);
@@ -184,7 +184,7 @@ namespace CapaVistaMRP
         {
             string prod2 = cmb_productos.texto2();
             int existe = cmb_productos.existe(prod2);
-            if (existe != -1 && existe != 0)
+            if (existe != -1 && prod2 != "")
             {
                 string sql = "Select maximo from configuraciones_inventarios ci INNER JOIN  inventarios_produccion ip on ci.cod_config = ip.cod_config WHERE ip.id_producto = '" + cmb_productos.ObtenerIndif() + "' ;";
                 string cant = mo.consulta(sql);
@@ -214,7 +214,7 @@ namespace CapaVistaMRP
             decimal cantidad = Nud_cantidad.Value;
             string med = Cmb_um.Text;
 
-            if (cantidad !=0 && rendi != 0 && cantidadrendi != 0) {
+            if (cantidad !=0 && rendi != 0 && cantidadrendi != 0 && med != "") {
             if (existe == -1 || existe == 0)
             {MessageBox.Show("El producto seleccionados no es valido ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
@@ -252,6 +252,7 @@ namespace CapaVistaMRP
                         Nud_cantidad.Value = 1;
                         nud_cantidadRinde.Value = 0;
                         nud_rendi.Value = 0;
+                        Cmb_um.Text = vacio;
                         MessageBox.Show("Registro con exito ", "Registrado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
                     else {
