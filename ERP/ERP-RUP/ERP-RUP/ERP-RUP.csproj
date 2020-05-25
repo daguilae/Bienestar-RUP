@@ -33,16 +33,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaVistaCONTA">
+    <Reference Include="CapaLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaLogica\bin\Debug\CapaLogica.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaVistaCONTA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\FRM\FRM-Conta-master\FRM\CapaVistaFRM\bin\Debug\CapaVistaCONTA.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaHRM">
+    <Reference Include="CapaVistaFRM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MODULOS\FRM\FRM-Gustavo-Randy-master\FRM\CapaVistaFRM\bin\Debug\CapaVistaFRM.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaVistaHRM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\HRM\HRM-Juan-master\HRM-Juan\HRM\CapaVistaHRM\bin\Debug\CapaVistaHRM.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaMRP">
+    <Reference Include="CapaVistaMRP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\MRP\MRP-Edgar-master\MRP\CapaVistaMRP\bin\Debug\CapaVistaMRP.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaSCM">
+    <Reference Include="CapaVistaSCM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\MODULOS\SCM\SCM-Ligia-master\SCM\SCM\CapaVistaSCM\bin\Debug\CapaVistaSCM.dll</HintPath>
     </Reference>
     <Reference Include="System" />

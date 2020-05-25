@@ -26,5 +26,10 @@ namespace CapaVistaMRP
         {
 
         }
+
+        private void Grb_detalle_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
