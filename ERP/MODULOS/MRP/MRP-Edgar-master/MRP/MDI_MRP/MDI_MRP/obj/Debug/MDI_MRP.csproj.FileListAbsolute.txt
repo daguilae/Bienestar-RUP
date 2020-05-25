@@ -64,8 +64,6 @@ C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\MDI_MRP.
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\MDI_MRP.exe
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\MDI_MRP.pdb
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaVistaMRP.dll
-C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaModelo.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaModeloMRP.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaDeDiseno.dll
@@ -123,3 +121,7 @@ C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaDeLo
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\InputKey.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaDatos.pdb
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\CapaDiseno.pdb
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\obj\Debug\MDI_MRP.exe.config
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\Polizas.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\MDI_MRP\MDI_MRP\bin\Debug\Polizas.pdb

@@ -70,8 +70,6 @@ C:\Users\edgar\source\repos\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.mantenimient
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaVistaMRP.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaVistaMRP.pdb
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaModeloMRP.dll
-C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaControladorMRP.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\ConsultasInteligentes.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaModelo.dll
@@ -88,7 +86,6 @@ C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDeci
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\FlashControlV71.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaLogica_Consultas.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaControlador.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
@@ -142,3 +139,10 @@ C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaDatos.p
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaDiseno.pdb
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CapaLogica.pdb
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.mantenimientoUnidadMedida.resources
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.reporteProduccion.resources
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\AxShockwaveFlashObjects.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.reporteCostos.resources
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\Polizas.dll
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\Polizas.pdb

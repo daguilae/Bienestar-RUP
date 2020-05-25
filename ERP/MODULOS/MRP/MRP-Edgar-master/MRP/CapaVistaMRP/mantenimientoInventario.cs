@@ -191,6 +191,7 @@ namespace CapaVistaMRP
                         Nud_cantidad.Minimum = 0;
                         Nud_cantidad.Value = 0;
                         Txt_idinv.Text = mo.idmax("inventarios_produccion", "id_inventario");
+                        cmb_unidadmedida.Text = limpio;
 
                     }
 

@@ -229,6 +229,7 @@ namespace CapaVistaMRP
                         Txt_descripcion.Clear();
                         Txt_tiempopp.Clear();
                         txt_para.Clear();
+                        
 
 
                     }

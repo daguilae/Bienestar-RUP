@@ -59,9 +59,9 @@
             this.lbl_noProcesp = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgb_pedidosEspeciales)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -70,8 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadRinde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_rendi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Dgb_pedidosEspeciales
@@ -170,7 +170,7 @@
             this.cmb_productos.Margin = new System.Windows.Forms.Padding(11);
             this.cmb_productos.Name = "cmb_productos";
             this.cmb_productos.Size = new System.Drawing.Size(191, 37);
-            this.cmb_productos.TabIndex = 20;
+            this.cmb_productos.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -261,7 +261,7 @@
             0});
             this.Nud_cantidad.Name = "Nud_cantidad";
             this.Nud_cantidad.Size = new System.Drawing.Size(100, 30);
-            this.Nud_cantidad.TabIndex = 13;
+            this.Nud_cantidad.TabIndex = 3;
             this.Nud_cantidad.Value = new decimal(new int[] {
             1,
             0,
@@ -326,7 +326,7 @@
             this.Cmb_um.Location = new System.Drawing.Point(213, 187);
             this.Cmb_um.Name = "Cmb_um";
             this.Cmb_um.Size = new System.Drawing.Size(191, 30);
-            this.Cmb_um.TabIndex = 34;
+            this.Cmb_um.TabIndex = 2;
             this.Cmb_um.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_um_KeyPress);
             // 
             // Txt_rendirRestante
@@ -357,7 +357,7 @@
             0});
             this.nud_cantidadRinde.Name = "nud_cantidadRinde";
             this.nud_cantidadRinde.Size = new System.Drawing.Size(146, 30);
-            this.nud_cantidadRinde.TabIndex = 31;
+            this.nud_cantidadRinde.TabIndex = 4;
             // 
             // label11
             // 
@@ -388,7 +388,7 @@
             0});
             this.nud_rendi.Name = "nud_rendi";
             this.nud_rendi.Size = new System.Drawing.Size(146, 30);
-            this.nud_rendi.TabIndex = 28;
+            this.nud_rendi.TabIndex = 5;
             // 
             // lbl_noreceta
             // 
@@ -462,7 +462,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.7792F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.2208F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
@@ -474,6 +474,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(938, 150);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::CapaVistaMRP.Properties.Resources.information;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(878, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
@@ -482,7 +493,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(728, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 144);
+            this.pictureBox1.Size = new System.Drawing.Size(144, 144);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -498,17 +509,6 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Receta";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::CapaVistaMRP.Properties.Resources.information;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(879, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 50);
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // mantenimientoRecetas
             // 
@@ -537,8 +537,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_rendi)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

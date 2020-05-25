@@ -33,14 +33,12 @@ namespace MDI_MRP
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            lbl_amigo.Text = combo1.obtenerP();
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            string texto = textBox1.Text;
-
-            combo1.texto(texto);
+            lbl_amigo2.Text = combo1.ObtenerIndif();
         }
 
         private void Button3_Click(object sender, EventArgs e)

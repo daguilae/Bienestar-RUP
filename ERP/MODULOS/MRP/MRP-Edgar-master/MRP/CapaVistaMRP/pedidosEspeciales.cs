@@ -56,7 +56,7 @@ namespace CapaVistaMRP
             int existe = cmb_productos.existe(buscar);
             decimal num = Nud_cantidad.Value;
 
-            if (existe != -1 && buscar != " " && num != 0)
+            if (existe != -1 && buscar != "" && num != 0)
             {
                 string primero = cmb_productos.ObtenerIndif();
                 string cantidad = Nud_cantidad.Value.ToString();
@@ -75,12 +75,22 @@ namespace CapaVistaMRP
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (Dgb_pedidosEspeciales.SelectedRows.Count == 1)
-            {
+        
+                if (Dgb_pedidosEspeciales.SelectedRows.Count == 1)
+                {
+                if (Dgb_pedidosEspeciales.Rows.Count > 1)
+                {
 
-               
-                Dgb_pedidosEspeciales.Rows.RemoveAt(Dgb_pedidosEspeciales.CurrentRow.Index);
-            }
+                    Dgb_pedidosEspeciales.Rows.RemoveAt(Dgb_pedidosEspeciales.CurrentRow.Index);
+                }
+                else {
+
+                    MessageBox.Show("No se puede ingresar una orden sin productos ", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+                }
+            
+          
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
