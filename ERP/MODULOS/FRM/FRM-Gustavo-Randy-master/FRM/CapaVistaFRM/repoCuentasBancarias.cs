@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaVistaMRP {
+namespace CapaVistaFRM {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CapaVistaMRP {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class produccion2 : ReportClass {
+    public class repoCuentasBancarias : ReportClass {
         
-        public produccion2() {
+        public repoCuentasBancarias() {
         }
         
         public override string ResourceName {
             get {
-                return "produccion2.rpt";
+                return "repoCuentasBancarias.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaVistaMRP {
         
         public override string FullResourceName {
             get {
-                return "CapaVistaMRP.produccion2.rpt";
+                return "CapaVistaFRM.repoCuentasBancarias.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace CapaVistaMRP {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace CapaVistaMRP {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace CapaVistaMRP {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedproduccion2 : Component, ICachedReport {
+    public class CachedrepoCuentasBancarias : Component, ICachedReport {
         
-        public Cachedproduccion2() {
+        public CachedrepoCuentasBancarias() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace CapaVistaMRP {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            produccion2 rpt = new produccion2();
+            repoCuentasBancarias rpt = new repoCuentasBancarias();
             rpt.Site = this.Site;
             return rpt;
         }

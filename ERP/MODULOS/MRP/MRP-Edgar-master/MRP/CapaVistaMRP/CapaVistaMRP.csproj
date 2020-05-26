@@ -177,12 +177,6 @@
     <Compile Include="procesoProduccion.Designer.cs">
       <DependentUpon>procesoProduccion.cs</DependentUpon>
     </Compile>
-    <Compile Include="produccion2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>produccion2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="productosProceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,10 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="procesoProduccion.resx">
       <DependentUpon>procesoProduccion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="produccion2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>produccion2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="productosProceso.resx">
       <DependentUpon>productosProceso.cs</DependentUpon>

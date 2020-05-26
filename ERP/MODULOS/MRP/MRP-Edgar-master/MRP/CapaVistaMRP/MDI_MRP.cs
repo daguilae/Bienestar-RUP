@@ -19,7 +19,7 @@ namespace CapaVistaMRP
         sentencia sn = new sentencia();
         string usuarioact;
         modelo mo = new modelo();
-        string ql = "select pe.cod_orden as 'codigo orden', pp.fecha_inicio as 'Fecha Inicio', pe.fecha_limite as 'Fecha Limite' from productos_proceso pp inner join produccion_encabezados pe on pp.cod_orden=pp.cod_orden  where pp.estado =1 order by pp.id_prodproc DESC LIMIT 4  ;";
+        string ql = "select pe.cod_orden as 'codigo orden', pp.fecha_inicio as 'Fecha Inicio', pe.fecha_limite as 'Fecha Limite' from productos_proceso pp inner join produccion_encabezados pe on pp.cod_orden=pe.cod_orden  where pp.estado =1 order by pp.id_prodproc DESC LIMIT 4  ;";
         string ql2 = "select cod_opp as 'cod_pendiente', cod_orden as 'codigo orden', fecha_limite as 'Fecha Limite' from ordenes_pendientes where estado = 1 order by cod_opp DESC limit 4 ;";
         string ql3 = "select  cod_orden, costo_total from productos_terminados GROUP by cod_orden  order by cod_orden DESC limit 4 ";
         public MDI_MRP()
@@ -457,7 +457,7 @@ namespace CapaVistaMRP
             poliza.Show();
             poliza.MdiParent = this;
             poliza.AsignarQuery(
-                "select 'Costos Primo' as cuenta , (SELECT round(sum( DISTINCT cp.costo_unitario_producto),3) from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF')  as debe ,'0' as haber UNION ALL select 'Mano de Obra Directa' as cuenta, (SELECT round(sum(DISTINCT cp.suma_costo_mo), 3) from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF') as debe , '0' as haber UNION ALL select 'Materia Prima' as cuenta , (SELECT round(sum(DISTINCT cp.suma_costo_mp), 3)  from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF') as debe ,'0' as haber UNION ALL  SELECT 'Caja' as cuenta, '0' as debe, round(sum(DISTINCT cp.suma_costo_mp) + SUM(DISTINCT cp.suma_costo_mo) + SUM(DISTINCT cp.costo_unitario_producto), 3) as haber from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF' ; ");
+                "select 'COSTO PRIMO' as cuenta , (SELECT round(sum( DISTINCT cp.costo_unitario_producto),3) from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF')  as debe ,'0' as haber UNION ALL select 'MANO DE OBRA DIRECTA' as cuenta, (SELECT round(sum(DISTINCT cp.suma_costo_mo), 3) from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF') as debe , '0' as haber UNION ALL select 'MATERIA PRIMA' as cuenta , (SELECT round(sum(DISTINCT cp.suma_costo_mp), 3)  from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF') as debe ,'0' as haber UNION ALL  SELECT 'CAJA' as cuenta, '0' as debe, round(sum(DISTINCT cp.suma_costo_mp) + SUM(DISTINCT cp.suma_costo_mo) + SUM(DISTINCT cp.costo_unitario_producto), 3) as haber from costos_produccion cp where cp.fecha BETWEEN 'FechaI' and 'FechaF' ; ");
             poliza.AsignarColores(Color.FromArgb(165, 132, 197), Color.Black);
             
         }
