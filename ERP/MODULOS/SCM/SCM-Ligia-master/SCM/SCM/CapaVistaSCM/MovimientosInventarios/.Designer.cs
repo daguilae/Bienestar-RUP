@@ -31,13 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MovimientosInventarios));
             this.Tbl_movimientoInventario = new System.Windows.Forms.TableLayoutPanel();
             this.Pnl_titulo = new System.Windows.Forms.Panel();
+            this.Btn_ayuda = new System.Windows.Forms.Button();
             this.Btn_MovInventario = new System.Windows.Forms.Button();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.Pnl_desarrollo = new System.Windows.Forms.Panel();
             this.Gpb_detalle = new System.Windows.Forms.GroupBox();
+            this.ZZ = new System.Windows.Forms.Label();
             this.Lbl_costoTotal = new System.Windows.Forms.Label();
             this.Txt_costoTotal = new System.Windows.Forms.TextBox();
-            this.Lbl_precioTotal = new System.Windows.Forms.Label();
+            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Dgv_movimientoDetalle = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,13 +47,14 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Impuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cambio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grp_producto = new System.Windows.Forms.GroupBox();
             this.combo1 = new CapaVista.Combo();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.Txt_producto = new System.Windows.Forms.TextBox();
             this.Txt_costo = new System.Windows.Forms.TextBox();
-            this.Txt_precioTotal = new System.Windows.Forms.TextBox();
             this.Lbl_costo = new System.Windows.Forms.Label();
             this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
             this.Lbl_cantidad = new System.Windows.Forms.Label();
@@ -66,7 +69,7 @@
             this.Tbc_Datos = new System.Windows.Forms.TabControl();
             this.Tbp_Datos = new System.Windows.Forms.TabPage();
             this.Pnl_datos = new System.Windows.Forms.Panel();
-            this.Chk_iva = new System.Windows.Forms.CheckBox();
+            this.Btn_Verificar = new System.Windows.Forms.Button();
             this.Chk_estado = new System.Windows.Forms.CheckBox();
             this.Chk_codigo = new System.Windows.Forms.CheckBox();
             this.Dtp_fecha = new System.Windows.Forms.DateTimePicker();
@@ -114,19 +117,37 @@
             this.Tbl_movimientoInventario.RowCount = 2;
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.Tbl_movimientoInventario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(904, 639);
+            this.Tbl_movimientoInventario.Size = new System.Drawing.Size(923, 642);
             this.Tbl_movimientoInventario.TabIndex = 1;
             // 
             // Pnl_titulo
             // 
             this.Pnl_titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Pnl_titulo.Controls.Add(this.Btn_ayuda);
             this.Pnl_titulo.Controls.Add(this.Btn_MovInventario);
             this.Pnl_titulo.Controls.Add(this.Lbl_titulo);
             this.Pnl_titulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_titulo.Location = new System.Drawing.Point(3, 3);
             this.Pnl_titulo.Name = "Pnl_titulo";
-            this.Pnl_titulo.Size = new System.Drawing.Size(898, 64);
+            this.Pnl_titulo.Size = new System.Drawing.Size(917, 64);
             this.Pnl_titulo.TabIndex = 0;
+            // 
+            // Btn_ayuda
+            // 
+            this.Btn_ayuda.BackgroundImage = global::CapaVistaSCM.Properties.Resources.information;
+            this.Btn_ayuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_ayuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Btn_ayuda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.BorderSize = 0;
+            this.Btn_ayuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
+            this.Btn_ayuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ayuda.Location = new System.Drawing.Point(742, 0);
+            this.Btn_ayuda.Name = "Btn_ayuda";
+            this.Btn_ayuda.Size = new System.Drawing.Size(37, 64);
+            this.Btn_ayuda.TabIndex = 5;
+            this.Btn_ayuda.UseVisualStyleBackColor = true;
+            this.Btn_ayuda.Click += new System.EventHandler(this.Btn_ayuda_Click);
             // 
             // Btn_MovInventario
             // 
@@ -139,7 +160,7 @@
             this.Btn_MovInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(208)))), ((int)(((byte)(68)))));
             this.Btn_MovInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_MovInventario.Location = new System.Drawing.Point(760, 0);
+            this.Btn_MovInventario.Location = new System.Drawing.Point(779, 0);
             this.Btn_MovInventario.Name = "Btn_MovInventario";
             this.Btn_MovInventario.Size = new System.Drawing.Size(138, 64);
             this.Btn_MovInventario.TabIndex = 3;
@@ -152,7 +173,7 @@
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.Lbl_titulo.Location = new System.Drawing.Point(0, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(536, 47);
+            this.Lbl_titulo.Size = new System.Drawing.Size(667, 59);
             this.Lbl_titulo.TabIndex = 0;
             this.Lbl_titulo.Text = "Movimientos de Inventario";
             // 
@@ -165,29 +186,40 @@
             this.Pnl_desarrollo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_desarrollo.Location = new System.Drawing.Point(3, 73);
             this.Pnl_desarrollo.Name = "Pnl_desarrollo";
-            this.Pnl_desarrollo.Size = new System.Drawing.Size(898, 563);
+            this.Pnl_desarrollo.Size = new System.Drawing.Size(917, 566);
             this.Pnl_desarrollo.TabIndex = 1;
             // 
             // Gpb_detalle
             // 
+            this.Gpb_detalle.Controls.Add(this.ZZ);
             this.Gpb_detalle.Controls.Add(this.Lbl_costoTotal);
             this.Gpb_detalle.Controls.Add(this.Txt_costoTotal);
-            this.Gpb_detalle.Controls.Add(this.Lbl_precioTotal);
+            this.Gpb_detalle.Controls.Add(this.Txt_precioTotal);
             this.Gpb_detalle.Controls.Add(this.Dgv_movimientoDetalle);
-            this.Gpb_detalle.Location = new System.Drawing.Point(8, 326);
+            this.Gpb_detalle.Location = new System.Drawing.Point(9, 326);
             this.Gpb_detalle.Name = "Gpb_detalle";
             this.Gpb_detalle.Size = new System.Drawing.Size(886, 230);
             this.Gpb_detalle.TabIndex = 16;
             this.Gpb_detalle.TabStop = false;
             this.Gpb_detalle.Text = "DETALLE DE MOVIMIENTO";
             // 
+            // ZZ
+            // 
+            this.ZZ.AutoSize = true;
+            this.ZZ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZZ.Location = new System.Drawing.Point(6, 199);
+            this.ZZ.Name = "ZZ";
+            this.ZZ.Size = new System.Drawing.Size(139, 23);
+            this.ZZ.TabIndex = 30;
+            this.ZZ.Text = "PRESIO TOTAL";
+            // 
             // Lbl_costoTotal
             // 
             this.Lbl_costoTotal.AutoSize = true;
             this.Lbl_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_costoTotal.Location = new System.Drawing.Point(293, 197);
+            this.Lbl_costoTotal.Location = new System.Drawing.Point(346, 197);
             this.Lbl_costoTotal.Name = "Lbl_costoTotal";
-            this.Lbl_costoTotal.Size = new System.Drawing.Size(112, 19);
+            this.Lbl_costoTotal.Size = new System.Drawing.Size(141, 23);
             this.Lbl_costoTotal.TabIndex = 28;
             this.Lbl_costoTotal.Text = "COSTO TOTAL";
             // 
@@ -197,20 +229,21 @@
             this.Txt_costoTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txt_costoTotal.Enabled = false;
             this.Txt_costoTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_costoTotal.Location = new System.Drawing.Point(413, 197);
+            this.Txt_costoTotal.Location = new System.Drawing.Point(504, 197);
             this.Txt_costoTotal.Name = "Txt_costoTotal";
-            this.Txt_costoTotal.Size = new System.Drawing.Size(161, 20);
+            this.Txt_costoTotal.Size = new System.Drawing.Size(161, 25);
             this.Txt_costoTotal.TabIndex = 29;
             // 
-            // Lbl_precioTotal
+            // Txt_precioTotal
             // 
-            this.Lbl_precioTotal.AutoSize = true;
-            this.Lbl_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_precioTotal.Location = new System.Drawing.Point(6, 197);
-            this.Lbl_precioTotal.Name = "Lbl_precioTotal";
-            this.Lbl_precioTotal.Size = new System.Drawing.Size(114, 19);
-            this.Lbl_precioTotal.TabIndex = 26;
-            this.Lbl_precioTotal.Text = "PRECIO TOTAL";
+            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_precioTotal.Enabled = false;
+            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_precioTotal.Location = new System.Drawing.Point(153, 200);
+            this.Txt_precioTotal.Name = "Txt_precioTotal";
+            this.Txt_precioTotal.Size = new System.Drawing.Size(187, 25);
+            this.Txt_precioTotal.TabIndex = 27;
             // 
             // Dgv_movimientoDetalle
             // 
@@ -226,7 +259,9 @@
             this.Nombre,
             this.Cantidad,
             this.Costo,
-            this.Precio});
+            this.Precio,
+            this.Impuesto,
+            this.Cambio});
             this.Dgv_movimientoDetalle.Location = new System.Drawing.Point(5, 26);
             this.Dgv_movimientoDetalle.Name = "Dgv_movimientoDetalle";
             this.Dgv_movimientoDetalle.ReadOnly = true;
@@ -236,6 +271,8 @@
             this.Dgv_movimientoDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_movimientoDetalle.Size = new System.Drawing.Size(878, 168);
             this.Dgv_movimientoDetalle.TabIndex = 25;
+            this.Dgv_movimientoDetalle.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Dgv_movimientoDetalle_RowsAdded);
+            this.Dgv_movimientoDetalle.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.Dgv_movimientoDetalle_RowsRemoved);
             // 
             // Codigo
             // 
@@ -279,13 +316,30 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
+            // Impuesto
+            // 
+            this.Impuesto.HeaderText = "Impuesto";
+            this.Impuesto.MinimumWidth = 6;
+            this.Impuesto.Name = "Impuesto";
+            this.Impuesto.ReadOnly = true;
+            this.Impuesto.Visible = false;
+            // 
+            // Cambio
+            // 
+            this.Cambio.HeaderText = "CAMBIO";
+            this.Cambio.MinimumWidth = 6;
+            this.Cambio.Name = "Cambio";
+            this.Cambio.ReadOnly = true;
+            this.Cambio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Cambio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Cambio.Visible = false;
+            // 
             // Grp_producto
             // 
             this.Grp_producto.Controls.Add(this.combo1);
             this.Grp_producto.Controls.Add(this.groupBox1);
             this.Grp_producto.Controls.Add(this.Txt_producto);
             this.Grp_producto.Controls.Add(this.Txt_costo);
-            this.Grp_producto.Controls.Add(this.Txt_precioTotal);
             this.Grp_producto.Controls.Add(this.Lbl_costo);
             this.Grp_producto.Controls.Add(this.Nud_cantidad);
             this.Grp_producto.Controls.Add(this.Lbl_cantidad);
@@ -294,7 +348,7 @@
             this.Grp_producto.Controls.Add(this.Lbl_producto);
             this.Grp_producto.Controls.Add(this.Gpb_eliminar);
             this.Grp_producto.Controls.Add(this.Gpb_agregar);
-            this.Grp_producto.Location = new System.Drawing.Point(3, 223);
+            this.Grp_producto.Location = new System.Drawing.Point(9, 223);
             this.Grp_producto.Name = "Grp_producto";
             this.Grp_producto.Size = new System.Drawing.Size(891, 97);
             this.Grp_producto.TabIndex = 15;
@@ -303,10 +357,10 @@
             // 
             // combo1
             // 
-            this.combo1.Location = new System.Drawing.Point(105, 24);
-            this.combo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.combo1.Location = new System.Drawing.Point(106, 20);
+            this.combo1.Margin = new System.Windows.Forms.Padding(4);
             this.combo1.Name = "combo1";
-            this.combo1.Size = new System.Drawing.Size(213, 32);
+            this.combo1.Size = new System.Drawing.Size(211, 34);
             this.combo1.TabIndex = 50;
             // 
             // groupBox1
@@ -329,9 +383,9 @@
             this.Btn_buscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_buscar.FlatAppearance.BorderSize = 0;
             this.Btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_buscar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_buscar.Location = new System.Drawing.Point(3, 24);
             this.Btn_buscar.Name = "Btn_buscar";
-            this.Btn_buscar.Size = new System.Drawing.Size(95, 32);
+            this.Btn_buscar.Size = new System.Drawing.Size(95, 28);
             this.Btn_buscar.TabIndex = 35;
             this.Btn_buscar.UseVisualStyleBackColor = false;
             this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
@@ -344,7 +398,7 @@
             this.Txt_producto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_producto.Location = new System.Drawing.Point(10, 63);
             this.Txt_producto.Name = "Txt_producto";
-            this.Txt_producto.Size = new System.Drawing.Size(277, 20);
+            this.Txt_producto.Size = new System.Drawing.Size(277, 25);
             this.Txt_producto.TabIndex = 49;
             // 
             // Txt_costo
@@ -355,19 +409,8 @@
             this.Txt_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_costo.Location = new System.Drawing.Point(542, 25);
             this.Txt_costo.Name = "Txt_costo";
-            this.Txt_costo.Size = new System.Drawing.Size(103, 20);
+            this.Txt_costo.Size = new System.Drawing.Size(103, 25);
             this.Txt_costo.TabIndex = 48;
-            // 
-            // Txt_precioTotal
-            // 
-            this.Txt_precioTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Txt_precioTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txt_precioTotal.Enabled = false;
-            this.Txt_precioTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_precioTotal.Location = new System.Drawing.Point(364, 60);
-            this.Txt_precioTotal.Name = "Txt_precioTotal";
-            this.Txt_precioTotal.Size = new System.Drawing.Size(103, 20);
-            this.Txt_precioTotal.TabIndex = 27;
             // 
             // Lbl_costo
             // 
@@ -375,7 +418,7 @@
             this.Lbl_costo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_costo.Location = new System.Drawing.Point(472, 26);
             this.Lbl_costo.Name = "Lbl_costo";
-            this.Lbl_costo.Size = new System.Drawing.Size(62, 19);
+            this.Lbl_costo.Size = new System.Drawing.Size(78, 23);
             this.Lbl_costo.TabIndex = 47;
             this.Lbl_costo.Text = "COSTO";
             // 
@@ -394,7 +437,7 @@
             0,
             0});
             this.Nud_cantidad.Name = "Nud_cantidad";
-            this.Nud_cantidad.Size = new System.Drawing.Size(53, 27);
+            this.Nud_cantidad.Size = new System.Drawing.Size(53, 32);
             this.Nud_cantidad.TabIndex = 46;
             this.Nud_cantidad.Value = new decimal(new int[] {
             1,
@@ -408,7 +451,7 @@
             this.Lbl_cantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_cantidad.Location = new System.Drawing.Point(473, 63);
             this.Lbl_cantidad.Name = "Lbl_cantidad";
-            this.Lbl_cantidad.Size = new System.Drawing.Size(90, 19);
+            this.Lbl_cantidad.Size = new System.Drawing.Size(113, 23);
             this.Lbl_cantidad.TabIndex = 45;
             this.Lbl_cantidad.Text = "CANTIDAD";
             // 
@@ -420,7 +463,7 @@
             this.Txt_precio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_precio.Location = new System.Drawing.Point(364, 63);
             this.Txt_precio.Name = "Txt_precio";
-            this.Txt_precio.Size = new System.Drawing.Size(103, 20);
+            this.Txt_precio.Size = new System.Drawing.Size(103, 25);
             this.Txt_precio.TabIndex = 44;
             // 
             // label1
@@ -429,7 +472,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(294, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.Size = new System.Drawing.Size(82, 23);
             this.label1.TabIndex = 37;
             this.label1.Text = "PRECIO";
             // 
@@ -439,7 +482,7 @@
             this.Lbl_producto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_producto.Location = new System.Drawing.Point(6, 26);
             this.Lbl_producto.Name = "Lbl_producto";
-            this.Lbl_producto.Size = new System.Drawing.Size(93, 19);
+            this.Lbl_producto.Size = new System.Drawing.Size(118, 23);
             this.Lbl_producto.TabIndex = 35;
             this.Lbl_producto.Text = "PRODUCTO";
             // 
@@ -463,9 +506,9 @@
             this.Btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_eliminar.FlatAppearance.BorderSize = 0;
             this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_eliminar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_eliminar.Location = new System.Drawing.Point(3, 24);
             this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(104, 32);
+            this.Btn_eliminar.Size = new System.Drawing.Size(104, 28);
             this.Btn_eliminar.TabIndex = 36;
             this.Btn_eliminar.UseVisualStyleBackColor = false;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
@@ -480,6 +523,7 @@
             this.Gpb_agregar.TabIndex = 33;
             this.Gpb_agregar.TabStop = false;
             this.Gpb_agregar.Text = "AGREGAR";
+            this.Gpb_agregar.Enter += new System.EventHandler(this.Gpb_agregar_Enter);
             // 
             // Btn_agregar
             // 
@@ -490,9 +534,9 @@
             this.Btn_agregar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_agregar.FlatAppearance.BorderSize = 0;
             this.Btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_agregar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_agregar.Location = new System.Drawing.Point(3, 24);
             this.Btn_agregar.Name = "Btn_agregar";
-            this.Btn_agregar.Size = new System.Drawing.Size(95, 32);
+            this.Btn_agregar.Size = new System.Drawing.Size(95, 28);
             this.Btn_agregar.TabIndex = 35;
             this.Btn_agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_agregar.UseVisualStyleBackColor = false;
@@ -501,7 +545,7 @@
             // Grp_DatosMovimiento
             // 
             this.Grp_DatosMovimiento.Controls.Add(this.Tbc_Datos);
-            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(3, 3);
+            this.Grp_DatosMovimiento.Location = new System.Drawing.Point(9, 3);
             this.Grp_DatosMovimiento.Name = "Grp_DatosMovimiento";
             this.Grp_DatosMovimiento.Size = new System.Drawing.Size(891, 214);
             this.Grp_DatosMovimiento.TabIndex = 14;
@@ -513,27 +557,27 @@
             this.Tbc_Datos.Controls.Add(this.Tbp_Datos);
             this.Tbc_Datos.Controls.Add(this.Tbp_descripcion);
             this.Tbc_Datos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Tbc_Datos.Location = new System.Drawing.Point(3, 23);
+            this.Tbc_Datos.Location = new System.Drawing.Point(3, 28);
             this.Tbc_Datos.Name = "Tbc_Datos";
             this.Tbc_Datos.SelectedIndex = 0;
-            this.Tbc_Datos.Size = new System.Drawing.Size(885, 188);
+            this.Tbc_Datos.Size = new System.Drawing.Size(885, 183);
             this.Tbc_Datos.TabIndex = 0;
             // 
             // Tbp_Datos
             // 
             this.Tbp_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.Tbp_Datos.Controls.Add(this.Pnl_datos);
-            this.Tbp_Datos.Location = new System.Drawing.Point(4, 30);
+            this.Tbp_Datos.Location = new System.Drawing.Point(4, 32);
             this.Tbp_Datos.Name = "Tbp_Datos";
             this.Tbp_Datos.Padding = new System.Windows.Forms.Padding(3);
-            this.Tbp_Datos.Size = new System.Drawing.Size(877, 154);
+            this.Tbp_Datos.Size = new System.Drawing.Size(877, 147);
             this.Tbp_Datos.TabIndex = 0;
             this.Tbp_Datos.Text = "Datos";
             // 
             // Pnl_datos
             // 
             this.Pnl_datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.Pnl_datos.Controls.Add(this.Chk_iva);
+            this.Pnl_datos.Controls.Add(this.Btn_Verificar);
             this.Pnl_datos.Controls.Add(this.Chk_estado);
             this.Pnl_datos.Controls.Add(this.Chk_codigo);
             this.Pnl_datos.Controls.Add(this.Dtp_fecha);
@@ -549,18 +593,22 @@
             this.Pnl_datos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_datos.Location = new System.Drawing.Point(3, 3);
             this.Pnl_datos.Name = "Pnl_datos";
-            this.Pnl_datos.Size = new System.Drawing.Size(871, 148);
+            this.Pnl_datos.Size = new System.Drawing.Size(871, 141);
             this.Pnl_datos.TabIndex = 0;
             // 
-            // Chk_iva
+            // Btn_Verificar
             // 
-            this.Chk_iva.AutoSize = true;
-            this.Chk_iva.Location = new System.Drawing.Point(314, 54);
-            this.Chk_iva.Name = "Chk_iva";
-            this.Chk_iva.Size = new System.Drawing.Size(122, 25);
-            this.Chk_iva.TabIndex = 48;
-            this.Chk_iva.Text = "IVA incluido";
-            this.Chk_iva.UseVisualStyleBackColor = true;
+            this.Btn_Verificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Verificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Btn_Verificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
+            this.Btn_Verificar.FlatAppearance.BorderSize = 0;
+            this.Btn_Verificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Verificar.Location = new System.Drawing.Point(229, 14);
+            this.Btn_Verificar.Name = "Btn_Verificar";
+            this.Btn_Verificar.Size = new System.Drawing.Size(101, 28);
+            this.Btn_Verificar.TabIndex = 48;
+            this.Btn_Verificar.Text = "Verificar";
+            this.Btn_Verificar.UseVisualStyleBackColor = false;
             // 
             // Chk_estado
             // 
@@ -569,17 +617,18 @@
             this.Chk_estado.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Chk_estado.Location = new System.Drawing.Point(314, 90);
             this.Chk_estado.Name = "Chk_estado";
-            this.Chk_estado.Size = new System.Drawing.Size(82, 25);
+            this.Chk_estado.Size = new System.Drawing.Size(96, 27);
             this.Chk_estado.TabIndex = 47;
             this.Chk_estado.Text = "Activo";
             this.Chk_estado.UseVisualStyleBackColor = true;
+            this.Chk_estado.CheckedChanged += new System.EventHandler(this.Chk_estado_CheckedChanged);
             // 
             // Chk_codigo
             // 
             this.Chk_codigo.AutoSize = true;
-            this.Chk_codigo.Location = new System.Drawing.Point(314, 13);
+            this.Chk_codigo.Location = new System.Drawing.Point(338, 17);
             this.Chk_codigo.Name = "Chk_codigo";
-            this.Chk_codigo.Size = new System.Drawing.Size(185, 25);
+            this.Chk_codigo.Size = new System.Drawing.Size(225, 27);
             this.Chk_codigo.TabIndex = 42;
             this.Chk_codigo.Text = "Codigo automatico";
             this.Chk_codigo.UseVisualStyleBackColor = true;
@@ -594,7 +643,7 @@
             this.Dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Dtp_fecha.Location = new System.Drawing.Point(118, 86);
             this.Dtp_fecha.Name = "Dtp_fecha";
-            this.Dtp_fecha.Size = new System.Drawing.Size(133, 27);
+            this.Dtp_fecha.Size = new System.Drawing.Size(133, 32);
             this.Dtp_fecha.TabIndex = 4;
             this.Dtp_fecha.ValueChanged += new System.EventHandler(this.Dtp_fecha_ValueChanged);
             // 
@@ -604,7 +653,7 @@
             this.Lbl_fecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_fecha.Location = new System.Drawing.Point(26, 92);
             this.Lbl_fecha.Name = "Lbl_fecha";
-            this.Lbl_fecha.Size = new System.Drawing.Size(60, 19);
+            this.Lbl_fecha.Size = new System.Drawing.Size(75, 23);
             this.Lbl_fecha.TabIndex = 37;
             this.Lbl_fecha.Text = "FECHA";
             // 
@@ -628,11 +677,12 @@
             this.Btn_cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_cancelar.FlatAppearance.BorderSize = 0;
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cancelar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_cancelar.Location = new System.Drawing.Point(3, 24);
             this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(104, 32);
+            this.Btn_cancelar.Size = new System.Drawing.Size(104, 28);
             this.Btn_cancelar.TabIndex = 10;
             this.Btn_cancelar.UseVisualStyleBackColor = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Grp_guardar
             // 
@@ -654,21 +704,21 @@
             this.Btn_guardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(207)))), ((int)(((byte)(138)))));
             this.Btn_guardar.FlatAppearance.BorderSize = 0;
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_guardar.Location = new System.Drawing.Point(3, 20);
+            this.Btn_guardar.Location = new System.Drawing.Point(3, 24);
             this.Btn_guardar.Name = "Btn_guardar";
-            this.Btn_guardar.Size = new System.Drawing.Size(101, 32);
+            this.Btn_guardar.Size = new System.Drawing.Size(101, 28);
             this.Btn_guardar.TabIndex = 9;
             this.Btn_guardar.UseVisualStyleBackColor = false;
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Cbo_tipoMovimiento
             // 
-            this.Cbo_tipoMovimiento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Cbo_tipoMovimiento.BackColor = System.Drawing.Color.White;
             this.Cbo_tipoMovimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cbo_tipoMovimiento.FormattingEnabled = true;
             this.Cbo_tipoMovimiento.Location = new System.Drawing.Point(118, 51);
             this.Cbo_tipoMovimiento.Name = "Cbo_tipoMovimiento";
-            this.Cbo_tipoMovimiento.Size = new System.Drawing.Size(171, 29);
+            this.Cbo_tipoMovimiento.Size = new System.Drawing.Size(212, 31);
             this.Cbo_tipoMovimiento.TabIndex = 3;
             this.Cbo_tipoMovimiento.SelectedIndexChanged += new System.EventHandler(this.Cbo_tipoMovimiento_SelectedIndexChanged);
             // 
@@ -678,18 +728,18 @@
             this.Lbl_tipoMovimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_tipoMovimiento.Location = new System.Drawing.Point(12, 56);
             this.Lbl_tipoMovimiento.Name = "Lbl_tipoMovimiento";
-            this.Lbl_tipoMovimiento.Size = new System.Drawing.Size(88, 19);
+            this.Lbl_tipoMovimiento.Size = new System.Drawing.Size(113, 23);
             this.Lbl_tipoMovimiento.TabIndex = 31;
             this.Lbl_tipoMovimiento.Text = "TIPO MOV.";
             // 
             // Txt_nombre
             // 
-            this.Txt_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_nombre.BackColor = System.Drawing.Color.White;
             this.Txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_nombre.Location = new System.Drawing.Point(609, 13);
             this.Txt_nombre.Name = "Txt_nombre";
-            this.Txt_nombre.Size = new System.Drawing.Size(245, 27);
+            this.Txt_nombre.Size = new System.Drawing.Size(245, 32);
             this.Txt_nombre.TabIndex = 2;
             this.Txt_nombre.TextChanged += new System.EventHandler(this.Txt_nombre_TextChanged);
             // 
@@ -699,18 +749,18 @@
             this.Lbl_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_codigo.Location = new System.Drawing.Point(12, 17);
             this.Lbl_codigo.Name = "Lbl_codigo";
-            this.Lbl_codigo.Size = new System.Drawing.Size(75, 19);
+            this.Lbl_codigo.Size = new System.Drawing.Size(97, 23);
             this.Lbl_codigo.TabIndex = 27;
             this.Lbl_codigo.Text = "CODIGO";
             // 
             // Txt_codigo
             // 
-            this.Txt_codigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Txt_codigo.BackColor = System.Drawing.Color.White;
             this.Txt_codigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Txt_codigo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_codigo.Location = new System.Drawing.Point(118, 13);
             this.Txt_codigo.Name = "Txt_codigo";
-            this.Txt_codigo.Size = new System.Drawing.Size(178, 27);
+            this.Txt_codigo.Size = new System.Drawing.Size(105, 32);
             this.Txt_codigo.TabIndex = 1;
             this.Txt_codigo.TextChanged += new System.EventHandler(this.Txt_codigo_TextChanged);
             // 
@@ -720,7 +770,7 @@
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_nombre.Location = new System.Drawing.Point(529, 17);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(74, 19);
+            this.Lbl_nombre.Size = new System.Drawing.Size(94, 23);
             this.Lbl_nombre.TabIndex = 29;
             this.Lbl_nombre.Text = "NOMBRE";
             // 
@@ -731,7 +781,7 @@
             this.Tbp_descripcion.Location = new System.Drawing.Point(4, 22);
             this.Tbp_descripcion.Name = "Tbp_descripcion";
             this.Tbp_descripcion.Padding = new System.Windows.Forms.Padding(3);
-            this.Tbp_descripcion.Size = new System.Drawing.Size(877, 157);
+            this.Tbp_descripcion.Size = new System.Drawing.Size(877, 162);
             this.Tbp_descripcion.TabIndex = 1;
             this.Tbp_descripcion.Text = "Nota";
             // 
@@ -741,20 +791,19 @@
             this.Txt_descripcion.Location = new System.Drawing.Point(3, 3);
             this.Txt_descripcion.Multiline = true;
             this.Txt_descripcion.Name = "Txt_descripcion";
-            this.Txt_descripcion.Size = new System.Drawing.Size(871, 151);
+            this.Txt_descripcion.Size = new System.Drawing.Size(871, 156);
             this.Txt_descripcion.TabIndex = 12;
             this.Txt_descripcion.TextChanged += new System.EventHandler(this.Txt_descripcion_TextChanged);
             // 
             // Frm_MovimientosInventarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(904, 639);
+            this.ClientSize = new System.Drawing.Size(923, 642);
             this.Controls.Add(this.Tbl_movimientoInventario);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Frm_MovimientosInventarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Movimientos de Inventario";
@@ -821,7 +870,6 @@
         private System.Windows.Forms.GroupBox Gpb_detalle;
         private System.Windows.Forms.Label Lbl_costoTotal;
         private System.Windows.Forms.TextBox Txt_costoTotal;
-        private System.Windows.Forms.Label Lbl_precioTotal;
         private System.Windows.Forms.TextBox Txt_precioTotal;
         private System.Windows.Forms.DataGridView Dgv_movimientoDetalle;
         private System.Windows.Forms.TextBox Txt_costo;
@@ -830,17 +878,20 @@
         private System.Windows.Forms.Label Lbl_cantidad;
         private System.Windows.Forms.TextBox Txt_producto;
         private System.Windows.Forms.CheckBox Chk_estado;
-        private System.Windows.Forms.CheckBox Chk_iva;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Btn_buscar;
-        //private CapaVista.Combo combo1;
+        private CapaVista.Combo combo1;
+        private System.Windows.Forms.ComboBox Cbo_tipoMovimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private CapaVista.Combo combo1;
-        private System.Windows.Forms.ComboBox Cbo_tipoMovimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Impuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cambio;
+        private System.Windows.Forms.Label ZZ;
+        private System.Windows.Forms.Button Btn_ayuda;
+        private System.Windows.Forms.Button Btn_Verificar;
     }
 }

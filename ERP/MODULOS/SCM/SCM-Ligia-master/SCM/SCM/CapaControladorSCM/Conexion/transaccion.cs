@@ -28,8 +28,8 @@ namespace CapaControladorSCM
             catch (OdbcException ex)
             {
                 transaccion.Rollback();
-                mensaje = new Mensaje("Error en la operacion con la Base de Datos: \n" + ex.Message);
-                mensaje.Show();
+                MessageBox.Show("Error en la operacion con la Base de Datos: \n" + ex.Message);
+                
             }
             finally
             {
@@ -58,7 +58,7 @@ namespace CapaControladorSCM
             catch (OdbcException ex)
             {
                 transaccion.Rollback();
-                mensaje = new Mensaje("Error en la eliminacion a nivel de la Base de Datos: \n" + ex.Message);
+                mensaje = new Mensaje("> Error en la eliminacion a nivel de la Base de Datos: \n" + ex.Message);
                 mensaje.Show();
             }
             finally

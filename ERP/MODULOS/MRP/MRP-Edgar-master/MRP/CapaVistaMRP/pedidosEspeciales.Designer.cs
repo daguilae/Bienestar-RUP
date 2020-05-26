@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grb_detalle = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmb_productos = new CapaVista.Combo();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_agregar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
@@ -38,6 +42,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_cantidad = new System.Windows.Forms.Label();
             this.grb_encabezado = new System.Windows.Forms.GroupBox();
+            this.Dtp_fechalim = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Lbl_date = new System.Windows.Forms.Label();
             this.lbl_cliente = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,23 +52,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_noOrden = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_fecha = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Dgb_pedidosEspeciales = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_fecha = new System.Windows.Forms.Label();
-            this.Lbl_date = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Dtp_fechalim = new System.Windows.Forms.DateTimePicker();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechalim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmb_productos = new CapaVista.Combo();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.grb_detalle.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).BeginInit();
             this.grb_encabezado.SuspendLayout();
@@ -69,7 +71,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgb_pedidosEspeciales)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // grb_detalle
@@ -84,10 +86,60 @@
             this.grb_detalle.ForeColor = System.Drawing.Color.Black;
             this.grb_detalle.Location = new System.Drawing.Point(10, 371);
             this.grb_detalle.Name = "grb_detalle";
-            this.grb_detalle.Size = new System.Drawing.Size(685, 180);
+            this.grb_detalle.Size = new System.Drawing.Size(685, 143);
             this.grb_detalle.TabIndex = 12;
             this.grb_detalle.TabStop = false;
             this.grb_detalle.Text = "Detalle";
+            this.grb_detalle.Enter += new System.EventHandler(this.Grb_detalle_Enter);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(578, 29);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(96, 100);
+            this.tableLayoutPanel4.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
+            this.button1.BackgroundImage = global::CapaVistaMRP.Properties.Resources._157_paper_plane;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(60)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(3, 59);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 38);
+            this.button1.TabIndex = 10;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 56);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Enviar Orden";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmb_productos
+            // 
+            this.cmb_productos.Location = new System.Drawing.Point(196, 55);
+            this.cmb_productos.Margin = new System.Windows.Forms.Padding(8);
+            this.cmb_productos.Name = "cmb_productos";
+            this.cmb_productos.Size = new System.Drawing.Size(139, 29);
+            this.cmb_productos.TabIndex = 20;
             // 
             // tableLayoutPanel2
             // 
@@ -98,7 +150,7 @@
             this.tableLayoutPanel2.Controls.Add(this.Btn_eliminar, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label9, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(360, 65);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(362, 29);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -163,6 +215,11 @@
             // Nud_cantidad
             // 
             this.Nud_cantidad.Location = new System.Drawing.Point(235, 95);
+            this.Nud_cantidad.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.Nud_cantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -214,6 +271,34 @@
             this.grb_encabezado.TabIndex = 11;
             this.grb_encabezado.TabStop = false;
             this.grb_encabezado.Text = "Encabezado";
+            this.grb_encabezado.Enter += new System.EventHandler(this.Grb_encabezado_Enter);
+            // 
+            // Dtp_fechalim
+            // 
+            this.Dtp_fechalim.Location = new System.Drawing.Point(194, 133);
+            this.Dtp_fechalim.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.Dtp_fechalim.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.Dtp_fechalim.Name = "Dtp_fechalim";
+            this.Dtp_fechalim.Size = new System.Drawing.Size(204, 30);
+            this.Dtp_fechalim.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 23);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Fecha Limite";
+            // 
+            // Lbl_date
+            // 
+            this.Lbl_date.AutoSize = true;
+            this.Lbl_date.Location = new System.Drawing.Point(192, 101);
+            this.Lbl_date.Name = "Lbl_date";
+            this.Lbl_date.Size = new System.Drawing.Size(63, 23);
+            this.Lbl_date.TabIndex = 18;
+            this.Lbl_date.Text = "fecha";
             // 
             // lbl_cliente
             // 
@@ -294,6 +379,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "No. Orden";
             // 
+            // lbl_fecha
+            // 
+            this.lbl_fecha.AutoSize = true;
+            this.lbl_fecha.Location = new System.Drawing.Point(19, 101);
+            this.lbl_fecha.Name = "lbl_fecha";
+            this.lbl_fecha.Size = new System.Drawing.Size(72, 23);
+            this.lbl_fecha.TabIndex = 0;
+            this.lbl_fecha.Text = "Fecha ";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -302,7 +396,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(579, 150);
+            this.label5.Size = new System.Drawing.Size(527, 150);
             this.label5.TabIndex = 8;
             this.label5.Text = "Pedidos Especiales";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,9 +404,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.7792F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.2208F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -329,9 +425,9 @@
             this.pictureBox1.BackgroundImage = global::CapaVistaMRP.Properties.Resources.factory;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(588, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(536, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(116, 144);
+            this.pictureBox1.Size = new System.Drawing.Size(105, 144);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -345,7 +441,7 @@
             this.Cantidad,
             this.Fecha,
             this.fechalim});
-            this.Dgb_pedidosEspeciales.Location = new System.Drawing.Point(10, 571);
+            this.Dgb_pedidosEspeciales.Location = new System.Drawing.Point(10, 520);
             this.Dgb_pedidosEspeciales.Name = "Dgb_pedidosEspeciales";
             this.Dgb_pedidosEspeciales.ReadOnly = true;
             this.Dgb_pedidosEspeciales.RowHeadersWidth = 51;
@@ -353,83 +449,6 @@
             this.Dgb_pedidosEspeciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgb_pedidosEspeciales.Size = new System.Drawing.Size(685, 154);
             this.Dgb_pedidosEspeciales.TabIndex = 16;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(578, 65);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(96, 100);
-            this.tableLayoutPanel4.TabIndex = 21;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
-            this.button1.BackgroundImage = global::CapaVistaMRP.Properties.Resources._157_paper_plane;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(60)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(3, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 38);
-            this.button1.TabIndex = 10;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 56);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Enviar Orden";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_fecha
-            // 
-            this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Location = new System.Drawing.Point(19, 101);
-            this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(72, 23);
-            this.lbl_fecha.TabIndex = 0;
-            this.lbl_fecha.Text = "Fecha ";
-            // 
-            // Lbl_date
-            // 
-            this.Lbl_date.AutoSize = true;
-            this.Lbl_date.Location = new System.Drawing.Point(192, 101);
-            this.Lbl_date.Name = "Lbl_date";
-            this.Lbl_date.Size = new System.Drawing.Size(63, 23);
-            this.Lbl_date.TabIndex = 18;
-            this.Lbl_date.Text = "fecha";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Fecha Limite";
-            // 
-            // Dtp_fechalim
-            // 
-            this.Dtp_fechalim.Location = new System.Drawing.Point(194, 133);
-            this.Dtp_fechalim.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
-            this.Dtp_fechalim.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.Dtp_fechalim.Name = "Dtp_fechalim";
-            this.Dtp_fechalim.Size = new System.Drawing.Size(204, 30);
-            this.Dtp_fechalim.TabIndex = 20;
             // 
             // Producto
             // 
@@ -459,30 +478,37 @@
             this.fechalim.Name = "fechalim";
             this.fechalim.ReadOnly = true;
             // 
-            // cmb_productos
+            // pictureBox2
             // 
-            this.cmb_productos.Location = new System.Drawing.Point(196, 55);
-            this.cmb_productos.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
-            this.cmb_productos.Name = "cmb_productos";
-            this.cmb_productos.Size = new System.Drawing.Size(139, 29);
-            this.cmb_productos.TabIndex = 20;
+            this.pictureBox2.BackgroundImage = global::CapaVistaMRP.Properties.Resources.information;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(647, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // pedidosEspeciales
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(707, 737);
+            this.ClientSize = new System.Drawing.Size(707, 688);
             this.Controls.Add(this.Dgb_pedidosEspeciales);
             this.Controls.Add(this.grb_detalle);
             this.Controls.Add(this.grb_encabezado);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "pedidosEspeciales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "pedidosEspeciales";
+            this.Text = "2101 - Pedidos Especiales";
+            this.Load += new System.EventHandler(this.PedidosEspeciales_Load);
             this.grb_detalle.ResumeLayout(false);
             this.grb_detalle.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).EndInit();
@@ -494,8 +520,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgb_pedidosEspeciales)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,5 +559,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechalim;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

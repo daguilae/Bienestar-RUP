@@ -37,38 +37,43 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Cmb_estado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.cmb_unidadmedida = new System.Windows.Forms.ComboBox();
+            this.Txt_idinv = new System.Windows.Forms.TextBox();
+            this.Nud_cantidad = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Cmb_unm = new System.Windows.Forms.Label();
+            this.cmb_config = new CapaVista.Combo();
+            this.Cmb_prod = new CapaVista.Combo();
             this.label4 = new System.Windows.Forms.Label();
-            this.Lbl_noproceso = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.combo1 = new CapaVista.Combo();
-            this.combo2 = new CapaVista.Combo();
-            this.combo3 = new CapaVista.Combo();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgb_inventarios)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgb_inventarios
             // 
+            this.dgb_inventarios.AllowUserToAddRows = false;
             this.dgb_inventarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgb_inventarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgb_inventarios.Location = new System.Drawing.Point(8, 348);
+            this.dgb_inventarios.Location = new System.Drawing.Point(8, 353);
             this.dgb_inventarios.Name = "dgb_inventarios";
             this.dgb_inventarios.ReadOnly = true;
             this.dgb_inventarios.RowHeadersWidth = 51;
             this.dgb_inventarios.RowTemplate.Height = 24;
             this.dgb_inventarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgb_inventarios.Size = new System.Drawing.Size(906, 150);
+            this.dgb_inventarios.Size = new System.Drawing.Size(977, 158);
             this.dgb_inventarios.TabIndex = 18;
+            this.dgb_inventarios.DoubleClick += new System.EventHandler(this.Dgb_inventarios_DoubleClick);
             // 
             // tableLayoutPanel2
             // 
@@ -80,7 +85,7 @@
             this.tableLayoutPanel2.Controls.Add(this.Btn_insertar, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(941, 171);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1027, 174);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -101,7 +106,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 34);
             this.label9.TabIndex = 16;
-            this.label9.Text = "Actualizar";
+            this.label9.Text = "Modificar";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Btn_actualizar
@@ -132,6 +137,7 @@
             this.Btn_eliminar.Size = new System.Drawing.Size(105, 49);
             this.Btn_eliminar.TabIndex = 11;
             this.Btn_eliminar.UseVisualStyleBackColor = false;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Btn_insertar
             // 
@@ -146,6 +152,7 @@
             this.Btn_insertar.Size = new System.Drawing.Size(105, 43);
             this.Btn_insertar.TabIndex = 13;
             this.Btn_insertar.UseVisualStyleBackColor = false;
+            this.Btn_insertar.Click += new System.EventHandler(this.Btn_insertar_Click);
             // 
             // label8
             // 
@@ -171,42 +178,93 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.combo3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.combo2);
-            this.groupBox1.Controls.Add(this.combo1);
-            this.groupBox1.Controls.Add(this.Cmb_estado);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmb_unidadmedida);
+            this.groupBox1.Controls.Add(this.Txt_idinv);
+            this.groupBox1.Controls.Add(this.Nud_cantidad);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.Cmb_unm);
+            this.groupBox1.Controls.Add(this.cmb_config);
+            this.groupBox1.Controls.Add(this.Cmb_prod);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.Lbl_noproceso);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 136);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(914, 206);
+            this.groupBox1.Size = new System.Drawing.Size(985, 206);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Proceso";
             // 
-            // Cmb_estado
+            // cmb_unidadmedida
             // 
-            this.Cmb_estado.FormattingEnabled = true;
-            this.Cmb_estado.Items.AddRange(new object[] {
-            "1",
-            "0"});
-            this.Cmb_estado.Location = new System.Drawing.Point(711, 129);
-            this.Cmb_estado.Name = "Cmb_estado";
-            this.Cmb_estado.Size = new System.Drawing.Size(84, 30);
-            this.Cmb_estado.TabIndex = 10;
+            this.cmb_unidadmedida.FormattingEnabled = true;
+            this.cmb_unidadmedida.Location = new System.Drawing.Point(791, 86);
+            this.cmb_unidadmedida.Name = "cmb_unidadmedida";
+            this.cmb_unidadmedida.Size = new System.Drawing.Size(146, 30);
+            this.cmb_unidadmedida.TabIndex = 5;
+            this.cmb_unidadmedida.Tag = "5";
+            this.cmb_unidadmedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_unidadmedida_KeyPress);
             // 
-            // label6
+            // Txt_idinv
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 23);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Estado";
+            this.Txt_idinv.Location = new System.Drawing.Point(196, 38);
+            this.Txt_idinv.Name = "Txt_idinv";
+            this.Txt_idinv.Size = new System.Drawing.Size(44, 30);
+            this.Txt_idinv.TabIndex = 5;
+            this.Txt_idinv.Tag = "1";
+            // 
+            // Nud_cantidad
+            // 
+            this.Nud_cantidad.DecimalPlaces = 2;
+            this.Nud_cantidad.Location = new System.Drawing.Point(791, 41);
+            this.Nud_cantidad.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.Nud_cantidad.Name = "Nud_cantidad";
+            this.Nud_cantidad.Size = new System.Drawing.Size(146, 30);
+            this.Nud_cantidad.TabIndex = 4;
+            this.Nud_cantidad.Tag = "";
+            this.Nud_cantidad.Enter += new System.EventHandler(this.Nud_cantidad_Enter);
+            this.Nud_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Nud_cantidad_KeyPress);
+            this.Nud_cantidad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Nud_cantidad_MouseClick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(447, 41);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(224, 23);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Cantidad en inventario";
+            // 
+            // Cmb_unm
+            // 
+            this.Cmb_unm.AutoSize = true;
+            this.Cmb_unm.Location = new System.Drawing.Point(447, 89);
+            this.Cmb_unm.Name = "Cmb_unm";
+            this.Cmb_unm.Size = new System.Drawing.Size(187, 23);
+            this.Cmb_unm.TabIndex = 13;
+            this.Cmb_unm.Text = "Unidad de medida";
+            // 
+            // cmb_config
+            // 
+            this.cmb_config.Location = new System.Drawing.Point(196, 129);
+            this.cmb_config.Margin = new System.Windows.Forms.Padding(15);
+            this.cmb_config.Name = "cmb_config";
+            this.cmb_config.Size = new System.Drawing.Size(182, 33);
+            this.cmb_config.TabIndex = 3;
+            this.cmb_config.Tag = "3";
+            // 
+            // Cmb_prod
+            // 
+            this.Cmb_prod.Location = new System.Drawing.Point(196, 86);
+            this.Cmb_prod.Margin = new System.Windows.Forms.Padding(15);
+            this.Cmb_prod.Name = "Cmb_prod";
+            this.Cmb_prod.Size = new System.Drawing.Size(182, 33);
+            this.Cmb_prod.TabIndex = 1;
+            this.Cmb_prod.Tag = "2";
             // 
             // label4
             // 
@@ -217,23 +275,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "configuración";
             // 
-            // Lbl_noproceso
-            // 
-            this.Lbl_noproceso.AutoSize = true;
-            this.Lbl_noproceso.Location = new System.Drawing.Point(192, 45);
-            this.Lbl_noproceso.Name = "Lbl_noproceso";
-            this.Lbl_noproceso.Size = new System.Drawing.Size(69, 23);
-            this.Lbl_noproceso.TabIndex = 3;
-            this.Lbl_noproceso.Text = "label3";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(25, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 23);
+            this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 2;
-            this.label2.Text = "no_proceso";
+            this.label2.Text = "No_Inventario";
             // 
             // label1
             // 
@@ -241,23 +290,25 @@
             this.label1.Location = new System.Drawing.Point(25, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 23);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 17;
             this.label1.Text = "Producto";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(132)))), ((int)(((byte)(197)))));
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.42921F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.5708F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1083, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1171, 130);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // label5
@@ -268,7 +319,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(843, 130);
+            this.label5.Size = new System.Drawing.Size(866, 130);
             this.label5.TabIndex = 8;
             this.label5.Text = "Mantenimiento de Inventario";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,66 +330,47 @@
             this.pictureBox1.BackgroundImage = global::CapaVistaMRP.Properties.Resources.factory;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(852, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(875, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(234, 124);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // combo1
+            // pictureBox2
             // 
-            this.combo1.Location = new System.Drawing.Point(196, 89);
-            this.combo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.combo1.Name = "combo1";
-            this.combo1.Size = new System.Drawing.Size(147, 33);
-            this.combo1.TabIndex = 11;
-            // 
-            // combo2
-            // 
-            this.combo2.Location = new System.Drawing.Point(196, 130);
-            this.combo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.combo2.Name = "combo2";
-            this.combo2.Size = new System.Drawing.Size(147, 33);
-            this.combo2.TabIndex = 12;
-            // 
-            // combo3
-            // 
-            this.combo3.Location = new System.Drawing.Point(593, 85);
-            this.combo3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.combo3.Name = "combo3";
-            this.combo3.Size = new System.Drawing.Size(202, 35);
-            this.combo3.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(378, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 23);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Unidad de medida";
+            this.pictureBox2.BackgroundImage = global::CapaVistaMRP.Properties.Resources.information;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(1115, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
             // mantenimientoInventario
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1083, 515);
+            this.ClientSize = new System.Drawing.Size(1171, 523);
             this.Controls.Add(this.dgb_inventarios);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "mantenimientoInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "mantenimientoInventario";
+            this.Text = "4004 - Mantenimiento Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.dgb_inventarios)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Nud_cantidad)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,18 +386,19 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox Cmb_estado;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label Lbl_noproceso;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CapaVista.Combo combo2;
-        private CapaVista.Combo combo1;
-        private CapaVista.Combo combo3;
-        private System.Windows.Forms.Label label7;
+        private CapaVista.Combo cmb_config;
+        private CapaVista.Combo Cmb_prod;
+        private System.Windows.Forms.Label Cmb_unm;
+        private System.Windows.Forms.NumericUpDown Nud_cantidad;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox Txt_idinv;
+        private System.Windows.Forms.ComboBox cmb_unidadmedida;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

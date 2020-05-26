@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Conceptos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtcodigo = new System.Windows.Forms.Button();
+            this.BTN_insertar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,7 +51,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Cbo_sexo = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_can = new System.Windows.Forms.Button();
+            this.BTN_nuevo = new System.Windows.Forms.Button();
             this.combo3 = new CapaVista.Combo();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -72,9 +75,8 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Txt_Codigo2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -84,7 +86,6 @@
             this.Cbo_sexo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -95,15 +96,26 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1309, 82);
+            this.groupBox1.Size = new System.Drawing.Size(1308, 82);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 61);
+            this.pictureBox2.TabIndex = 27;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1191, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1208, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 72);
             this.pictureBox1.TabIndex = 26;
@@ -125,10 +137,10 @@
             this.groupBox4.Controls.Add(this.dataGridView2);
             this.groupBox4.Location = new System.Drawing.Point(644, 372);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(659, 279);
+            this.groupBox4.Size = new System.Drawing.Size(652, 279);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "información Componentes";
+            this.groupBox4.Text = "Conceptos asignados";
             // 
             // dataGridView2
             // 
@@ -136,48 +148,53 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(39, 26);
+            this.dataGridView2.Location = new System.Drawing.Point(11, 26);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(590, 240);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(634, 240);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.DoubleClick += new System.EventHandler(this.dataGridView2_DoubleClick);
             // 
-            // txtcodigo
+            // BTN_insertar
             // 
-            this.txtcodigo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.txtcodigo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtcodigo.BackgroundImage")));
-            this.txtcodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.txtcodigo.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.txtcodigo.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.txtcodigo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.txtcodigo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.txtcodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtcodigo.ForeColor = System.Drawing.Color.White;
-            this.txtcodigo.Location = new System.Drawing.Point(423, 152);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(211, 49);
-            this.txtcodigo.TabIndex = 3;
-            this.txtcodigo.Text = "Insertar";
-            this.txtcodigo.UseVisualStyleBackColor = false;
-            this.txtcodigo.Click += new System.EventHandler(this.button4_Click);
+            this.BTN_insertar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_insertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_insertar.BackgroundImage")));
+            this.BTN_insertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BTN_insertar.Enabled = false;
+            this.BTN_insertar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.BTN_insertar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_insertar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_insertar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_insertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_insertar.ForeColor = System.Drawing.Color.White;
+            this.BTN_insertar.Location = new System.Drawing.Point(398, 155);
+            this.BTN_insertar.Name = "BTN_insertar";
+            this.BTN_insertar.Size = new System.Drawing.Size(145, 49);
+            this.BTN_insertar.TabIndex = 3;
+            this.BTN_insertar.Text = "Insertar";
+            this.BTN_insertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTN_insertar.UseVisualStyleBackColor = false;
+            this.BTN_insertar.Click += new System.EventHandler(this.button4_Click);
             // 
             // Btn_eliminar
             // 
             this.Btn_eliminar.BackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_eliminar.BackgroundImage")));
+            this.Btn_eliminar.Enabled = false;
             this.Btn_eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.Btn_eliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_eliminar.ForeColor = System.Drawing.Color.White;
-            this.Btn_eliminar.Location = new System.Drawing.Point(423, 210);
+            this.Btn_eliminar.Location = new System.Drawing.Point(398, 210);
             this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(211, 51);
+            this.Btn_eliminar.Size = new System.Drawing.Size(145, 51);
             this.Btn_eliminar.TabIndex = 2;
             this.Btn_eliminar.Text = "Eliminar";
+            this.Btn_eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_eliminar.UseVisualStyleBackColor = false;
             this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
@@ -186,10 +203,10 @@
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(8, 315);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(614, 336);
+            this.groupBox3.Size = new System.Drawing.Size(630, 336);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Empleado";
+            this.groupBox3.Text = "Empleados";
             // 
             // dataGridView1
             // 
@@ -201,13 +218,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(612, 297);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.checkBox2);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.Controls.Add(this.button1);
@@ -219,15 +237,35 @@
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Location = new System.Drawing.Point(18, 99);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(460, 195);
+            this.groupBox6.Size = new System.Drawing.Size(621, 195);
             this.groupBox6.TabIndex = 27;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Buscar por Nombre";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(487, 60);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 70);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Recargar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(134, 66);
+            this.checkBox2.Location = new System.Drawing.Point(120, 66);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(177, 25);
             this.checkBox2.TabIndex = 28;
@@ -255,9 +293,9 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(326, 108);
+            this.button1.Location = new System.Drawing.Point(326, 113);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 74);
+            this.button1.Size = new System.Drawing.Size(145, 65);
             this.button1.TabIndex = 28;
             this.button1.Text = "Buscar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -275,11 +313,12 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(326, 21);
+            this.button5.Location = new System.Drawing.Point(332, 21);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 62);
+            this.button5.Size = new System.Drawing.Size(139, 62);
             this.button5.TabIndex = 30;
             this.button5.Text = "Buscar";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -290,6 +329,7 @@
             this.TXT_APE.Name = "TXT_APE";
             this.TXT_APE.Size = new System.Drawing.Size(203, 27);
             this.TXT_APE.TabIndex = 5;
+            this.TXT_APE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_APE_KeyPress);
             // 
             // Txt_Codigo
             // 
@@ -298,6 +338,7 @@
             this.Txt_Codigo.Size = new System.Drawing.Size(170, 27);
             this.Txt_Codigo.TabIndex = 29;
             this.Txt_Codigo.TextChanged += new System.EventHandler(this.Txt_Codigo_TextChanged);
+            this.Txt_Codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Codigo_KeyPress);
             // 
             // TXT_NOM
             // 
@@ -306,6 +347,7 @@
             this.TXT_NOM.Name = "TXT_NOM";
             this.TXT_NOM.Size = new System.Drawing.Size(203, 27);
             this.TXT_NOM.TabIndex = 4;
+            this.TXT_NOM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXT_NOM_KeyPress);
             // 
             // label5
             // 
@@ -327,12 +369,13 @@
             // 
             // Cbo_sexo
             // 
-            this.Cbo_sexo.Controls.Add(this.button4);
+            this.Cbo_sexo.Controls.Add(this.btn_can);
+            this.Cbo_sexo.Controls.Add(this.BTN_nuevo);
             this.Cbo_sexo.Controls.Add(this.combo3);
             this.Cbo_sexo.Controls.Add(this.Btn_eliminar);
             this.Cbo_sexo.Controls.Add(this.radioButton2);
             this.Cbo_sexo.Controls.Add(this.radioButton1);
-            this.Cbo_sexo.Controls.Add(this.txtcodigo);
+            this.Cbo_sexo.Controls.Add(this.BTN_insertar);
             this.Cbo_sexo.Controls.Add(this.groupBox2);
             this.Cbo_sexo.Controls.Add(this.Txt_emplecon);
             this.Cbo_sexo.Controls.Add(this.label13);
@@ -342,28 +385,49 @@
             this.Cbo_sexo.Controls.Add(this.label11);
             this.Cbo_sexo.Location = new System.Drawing.Point(645, 99);
             this.Cbo_sexo.Name = "Cbo_sexo";
-            this.Cbo_sexo.Size = new System.Drawing.Size(658, 267);
+            this.Cbo_sexo.Size = new System.Drawing.Size(651, 267);
             this.Cbo_sexo.TabIndex = 31;
             this.Cbo_sexo.TabStop = false;
-            this.Cbo_sexo.Text = "Componentes";
+            this.Cbo_sexo.Text = "Datos para agragar coceptos";
             // 
-            // button4
+            // btn_can
             // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(423, 91);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 55);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "Nuevo concepto";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_2);
+            this.btn_can.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_can.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_can.BackgroundImage")));
+            this.btn_can.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_can.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btn_can.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_can.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_can.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_can.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_can.ForeColor = System.Drawing.Color.White;
+            this.btn_can.Location = new System.Drawing.Point(549, 155);
+            this.btn_can.Name = "btn_can";
+            this.btn_can.Size = new System.Drawing.Size(95, 106);
+            this.btn_can.TabIndex = 33;
+            this.btn_can.Text = "Cancelar";
+            this.btn_can.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_can.UseVisualStyleBackColor = false;
+            this.btn_can.Click += new System.EventHandler(this.button2_Click_2);
+            // 
+            // BTN_nuevo
+            // 
+            this.BTN_nuevo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_nuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_nuevo.BackgroundImage")));
+            this.BTN_nuevo.Enabled = false;
+            this.BTN_nuevo.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.BTN_nuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_nuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.BTN_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_nuevo.ForeColor = System.Drawing.Color.White;
+            this.BTN_nuevo.Location = new System.Drawing.Point(398, 91);
+            this.BTN_nuevo.Name = "BTN_nuevo";
+            this.BTN_nuevo.Size = new System.Drawing.Size(246, 55);
+            this.BTN_nuevo.TabIndex = 32;
+            this.BTN_nuevo.Text = "Nuevo concepto";
+            this.BTN_nuevo.UseVisualStyleBackColor = false;
+            this.BTN_nuevo.Click += new System.EventHandler(this.button4_Click_2);
             // 
             // combo3
             // 
@@ -381,10 +445,10 @@
             this.radioButton2.Enabled = false;
             this.radioButton2.Location = new System.Drawing.Point(552, 25);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 25);
+            this.radioButton2.Size = new System.Drawing.Size(77, 25);
             this.radioButton2.TabIndex = 26;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Haber";
+            this.radioButton2.Text = "Sumar";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -394,9 +458,9 @@
             this.radioButton1.Enabled = false;
             this.radioButton1.Location = new System.Drawing.Point(446, 26);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 25);
+            this.radioButton1.Size = new System.Drawing.Size(77, 25);
             this.radioButton1.TabIndex = 25;
-            this.radioButton1.Text = "Debe";
+            this.radioButton1.Text = "Restar";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -570,43 +634,12 @@
             this.ProgressBar1.Name = "ProgressBar1";
             this.ProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(484, 159);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 79);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Recargar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
-            // 
             // Conceptos
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1308, 676);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.Cbo_sexo);
             this.Controls.Add(this.groupBox6);
@@ -614,13 +647,15 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Conceptos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "3015 - Conceptos";
             this.Load += new System.EventHandler(this.Conceptos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -634,7 +669,6 @@
             this.groupBox2.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,7 +679,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button txtcodigo;
+        private System.Windows.Forms.Button BTN_insertar;
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -684,8 +718,9 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel Txt_Codigo2;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTN_nuevo;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_can;
     }
 }

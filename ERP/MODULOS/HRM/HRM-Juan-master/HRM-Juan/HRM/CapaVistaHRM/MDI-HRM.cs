@@ -180,7 +180,7 @@ namespace CapaVistaHRM
 
         private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Perfiles nuevo = new Perfiles(usuarioact);
+            Perfiles nuevo = new Perfiles(usuarioact ,"1");
             nuevo.MdiParent = this.MdiParent;
             nuevo.Show();
         }
@@ -226,7 +226,9 @@ namespace CapaVistaHRM
 
         private void solicitudesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Solicitudes nuevo = new Solicitudes(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
         }
 
         private void asistenciaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -264,7 +266,96 @@ namespace CapaVistaHRM
 
         private void finiquitosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+           
+        }
 
+        private void trajajosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           MantenimientosEmpleos nuevo = new MantenimientosEmpleos(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+
+        }
+
+        private void finiquitosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenifini nuevo = new Mantenifini(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Mantenimeitosoli nuevo = new Mantenimeitosoli(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+        }
+
+        private void solicitudesPCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Solicitudespro nuevo = new Solicitudespro(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+        }
+
+        private void despedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Mantenimientodes nuevo = new Mantenimientodes(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Ayuda.chm", "General.html");
+            
+
+
+        }
+
+        private void multiConceptosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Asignacioncone nuevo = new Asignacioncone(usuarioact);
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void planillaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+            Reporte nuevo = new Reporte();
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
+        }
+
+        private void polizaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Polizas.Polizas poliza = new Polizas.Polizas();
+            poliza.MdiParent=this;
+            poliza.Show();
+
+            poliza.AsignarQuery(
+                "  SELECT 'Sueldos' AS Cuenta, (SELECT round(COALESCE(sum(detalle_planilla.total_liquido), 0), 2) AS Sueldos FROM detalle_planilla INNER JOIN planilla ON planilla.id_planilla = detalle_planilla.id_planilla WHERE planilla.fecha_inicio >= 'FechaI' AND planilla.fecha_fin <= 'FechaF') AS Debe, '0' AS Haber UNION ALL SELECT 'Bancos' AS Cuenta, '0' AS Debe, (SELECT round(COALESCE(sum(detalle_planilla.total_liquido), 0), 2) AS Sueldos FROM detalle_planilla INNER JOIN planilla ON planilla.id_planilla = detalle_planilla.id_planilla WHERE planilla.fecha_inicio >= 'FechaI' AND planilla.fecha_fin <= 'FechaF') AS Haber;");
+
+
+            /**/
+           
+            /**/
+
+            poliza.AsignarColores(Color.Blue, Color.White);
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportesemo nuevo = new Reportesemo();
+            nuevo.MdiParent = this.MdiParent;
+            nuevo.Show();
         }
     }
 }

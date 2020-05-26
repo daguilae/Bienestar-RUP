@@ -6,6 +6,7 @@ using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaModeloCONTA;
@@ -85,33 +86,67 @@ namespace CapaVistaCONTA {
 			}
 		}
 
-		private void Btn_guardar_Click(object sender, EventArgs e)
+		private Boolean codigo_correcto(String codigo)
 		{
-			checkBox1.Visible = false;
-			button1.Visible = false;
-			if (estadoBtn == 0)
+			String expresion;
+			expresion = @"\d+(\.{1}\d+)+";
+			if (Regex.IsMatch(codigo, expresion))
 			{
-				string idTipo = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
-				string cod = (Convert.ToInt32(mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString()))) + 1).ToString();
-				mod.GuardarCuenta(Txt_Id.Text, idTipo, cod, Txt_nombre.Text, Txt_desc.Text);
-				llenarCuentas();
-				Txt_Id.Text = "";
-				Txt_desc.Text = "";
-				Txt_nombre.Text = "";
-				Txt_Id.Enabled = false;
+				if (Regex.Replace(codigo, expresion, String.Empty).Length == 0)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
 			}
 			else
 			{
-				mod.ModCuenta(Txt_Id.Text,Txt_nombre.Text, Txt_desc.Text, (checkBox1.Checked) ? "1" : "0");
-				llenarCuentas();
-				Txt_Id.Text = "";
-				Txt_desc.Text = "";
-				Txt_nombre.Text = "";
-				Txt_Id.Enabled = false;
+				return false;
 			}
-			estadoBtn = 0;
+		}
 
 
+		private void Btn_guardar_Click(object sender, EventArgs e)
+		{
+			if (Txt_Id.Text == "" || Txt_desc.Text == "" || Txt_nombre.Text == "" || Cmb_Tipo.Text == "")
+			{
+				MessageBox.Show("Por favor rellene todos los campos!");
+			}
+			else
+			{
+				if (codigo_correcto(Txt_Id.Text))
+				{
+					checkBox1.Visible = false;
+					button1.Visible = false;
+					if (estadoBtn == 0)
+					{
+						string idTipo = mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString());
+						string cod = (Convert.ToInt32(mod.ObtenerNextIdCuenta(mod.ObtenerIdTIpoCuenta(Cmb_Tipo.Text.ToString()))) + 1).ToString();
+						mod.GuardarCuenta(Txt_Id.Text, idTipo, cod, Txt_nombre.Text, Txt_desc.Text);
+						llenarCuentas();
+						Txt_Id.Text = "";
+						Txt_desc.Text = "";
+						Txt_nombre.Text = "";
+						Txt_Id.Enabled = false;
+					}
+					else
+					{
+						mod.ModCuenta(Txt_Id.Text, Txt_nombre.Text, Txt_desc.Text, (checkBox1.Checked) ? "1" : "0");
+						llenarCuentas();
+						Txt_Id.Text = "";
+						Txt_desc.Text = "";
+						Txt_nombre.Text = "";
+						Txt_Id.Enabled = false;
+					}
+					estadoBtn = 0;
+				}
+				else
+				{
+					MessageBox.Show("El código de cuenta no posee el formato correcto!");
+				}
+			}
 
 		}
 
@@ -168,6 +203,11 @@ namespace CapaVistaCONTA {
 		private void Dtgv_Cuentas_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
 		{
 			
+		}
+
+		private void PictureBox2_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(@"Ayudas\MantenimientoCuentasContables.chm");
 		}
 	}
 }

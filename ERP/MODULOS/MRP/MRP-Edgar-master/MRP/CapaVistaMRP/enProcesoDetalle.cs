@@ -17,9 +17,9 @@ namespace CapaVistaMRP
         string donde;
         string tabla = "produccion_encabezados";
         string tabla2 = "produccion_detalles";
-        string[] aliasC = new string[40];
-        string[] alias = { "cod_orden", "fecha orden", "fecha limite","tipo de produccion", "Estado" };
-        string[] alias2 = { "cod_detalle", "cod_orden","Producto", "Cantidad a Producir", "Estado" };
+        string[] aliasC = new string[120];
+        string[] alias = { "Numero de Orden", "fecha orden", "fecha limite","tipo de produccion", "Estado"};
+        string[] alias2 = { "Nombre de Producto", "Cantidad Total", "Numero de detalle", "Numero de Orden", "Estado" };
         public enProcesoDetalle(string dato)
         {
             InitializeComponent();
@@ -69,7 +69,9 @@ namespace CapaVistaMRP
             alias.CopyTo(aliasC, 0);
         }
 
-
-
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayuda-MRP/AyudaMRP.chm", "AyudaOrdenPendiente.html");
+        }
     }
 }

@@ -67,7 +67,11 @@ namespace CapaVistaCONTA
 		
 		private void Libro_Diario_Load(object sender, EventArgs e)
 		{
-
+			Cmb_Empresa_Crear.Items.AddRange(Libro.ComboDiario());
+			Cmb_Empresa_Modificar.Items.AddRange(Libro.ComboDiario());
+			Tbc_LibroDiario.Appearance = TabAppearance.FlatButtons;
+			Tbc_LibroDiario.ItemSize = new Size(0, 1);
+			Tbc_LibroDiario.SizeMode = TabSizeMode.Fixed;
 		}
 
 		private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -137,19 +141,35 @@ namespace CapaVistaCONTA
 
 		private void Btn_Partidas_Click(object sender, EventArgs e)
 		{
-			
-			idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
-			Tbc_LibroDiario.SelectedIndex = 1;
-			OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			Dtg_Partidas.Rows.Clear();
-			foreach (DataRow row in table.Rows)
+			if (Dtg_LibroDiario.Rows.Count != 0)
 			{
-				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+				idLibro = Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString();
+				Tbc_LibroDiario.SelectedIndex = 1;
+				OdbcDataAdapter dt = Libro.llenarPartidas(Dtg_LibroDiario.CurrentRow.Cells[0].Value.ToString());
+				DataTable table = new DataTable();
+				dt.Fill(table);
+				Dtg_Partidas.Rows.Clear();
+				foreach (DataRow row in table.Rows)
+				{
+					
+					Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+				}
+				foreach (DataGridViewRow row in Dtg_Partidas.Rows)
+				{
+					if (row.Cells[0].Value.ToString() != "")
+					{
+						row.DefaultCellStyle.BackColor = Color.Firebrick;
+						row.DefaultCellStyle.ForeColor = Color.White;
+
+					}
+				}
+
+				sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
 			}
-			 
-			sn.insertarBitacora(user, "Vio las partidas", "Libro Diario");
+			else
+			{
+				MessageBox.Show("No Hay Libros disponibles");
+			}
 
 		}
 
@@ -221,6 +241,16 @@ namespace CapaVistaCONTA
 				{
 					Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
 				}
+				foreach (DataGridViewRow row in Dtg_Partidas.Rows)
+				{
+					if (row.Cells[0].Value.ToString() != "")
+					{
+						row.DefaultCellStyle.BackColor = Color.Firebrick;
+						row.DefaultCellStyle.ForeColor = Color.White;
+
+					}
+				}
+				Txt_Concepto.Text = "";
 				sn.insertarBitacora(user, "Creo una partida", "Libro Diario");
 			}
 		}
@@ -243,12 +273,29 @@ namespace CapaVistaCONTA
 			{
 				Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
 			}
+			foreach (DataGridViewRow row in Dtg_Partidas.Rows)
+			{
+				if (row.Cells[0].Value.ToString() != "")
+				{
+					row.DefaultCellStyle.BackColor = Color.Firebrick;
+					row.DefaultCellStyle.ForeColor = Color.White;
 
-			
+				}
+			}
+
 			Dtg_Resumen.Rows.Clear();
 			foreach (DataRow row in table.Rows)
 			{
 				Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+			}
+			foreach (DataGridViewRow row in Dtg_Resumen.Rows)
+			{
+				if (row.Cells[0].Value.ToString() != "")
+				{
+					row.DefaultCellStyle.BackColor = Color.Firebrick;
+					row.DefaultCellStyle.ForeColor = Color.White;
+
+				}
 			}
 		}
 
@@ -281,12 +328,29 @@ namespace CapaVistaCONTA
 					{
 						Dtg_Partidas.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
 					}
+					foreach (DataGridViewRow row in Dtg_Partidas.Rows)
+					{
+						if (row.Cells[0].Value.ToString() != "")
+						{
+							row.DefaultCellStyle.BackColor = Color.Firebrick;
+							row.DefaultCellStyle.ForeColor = Color.White;
 
+						}
+					}
 
 					Dtg_Resumen.Rows.Clear();
 					foreach (DataRow row in table.Rows)
 					{
 						Dtg_Resumen.Rows.Add(row[0], row[1], row[2], row[3], row[4]);
+					}
+					foreach (DataGridViewRow row in Dtg_Resumen.Rows)
+					{
+						if (row.Cells[0].Value.ToString() != "")
+						{
+							row.DefaultCellStyle.BackColor = Color.Firebrick;
+							row.DefaultCellStyle.ForeColor = Color.White;
+
+						}
 					}
 					sn.insertarBitacora(user, "Elimino una partida", "Libro Diario");
 				}
@@ -437,6 +501,67 @@ namespace CapaVistaCONTA
 				Dtg_Movimientos.CurrentCell.Value = "";
 			}
 			
+		}
+
+		private void Button3_Click(object sender, EventArgs e)
+		{
+			Tbc_LibroDiario.SelectedIndex = 0;
+		}
+
+		private void Button4_Click(object sender, EventArgs e)
+		{
+			Tbc_LibroDiario.SelectedIndex = 2;
+		}
+
+		private void Button6_Click(object sender, EventArgs e)
+		{
+			Tbc_LibroDiario.SelectedIndex = 0;
+		}
+
+		private void Button5_Click(object sender, EventArgs e)
+		{
+			Tbc_LibroDiario.SelectedIndex = 1;
+		}
+
+		private void PictureBox2_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(@"Ayudas\ProcesoDiario.chm");
+		}
+
+		private void Dtg_Movimientos_MouseEnter(object sender, EventArgs e)
+		{
+			decimal debe = 0;
+			decimal haber = 0;
+			decimal dif = 0;
+			for (int i = 0; i < Dtg_Movimientos.Rows.Count - 1; i++)
+			{
+				debe += Convert.ToDecimal(Dtg_Movimientos.Rows[i].Cells[1].Value);
+				haber += Convert.ToDecimal(Dtg_Movimientos.Rows[i].Cells[2].Value);
+			}
+			dif = debe - haber;
+			if (dif<0)
+			{
+				dif = dif * -1;
+			}
+			label10.Text = dif.ToString();
+		}
+
+		private void Dtg_Movimientos_MouseMove(object sender, MouseEventArgs e)
+		{
+			decimal debe = 0;
+			decimal haber = 0;
+			decimal dif = 0;
+			for (int i = 0; i < Dtg_Movimientos.Rows.Count - 1; i++)
+			{
+				debe += Convert.ToDecimal(Dtg_Movimientos.Rows[i].Cells[1].Value);
+				haber += Convert.ToDecimal(Dtg_Movimientos.Rows[i].Cells[2].Value);
+			}
+			dif = debe - haber;
+			if (dif < 0)
+			{
+				dif = dif * -1;
+			}
+			label10.Text = dif.ToString();
 		}
 	}
 }

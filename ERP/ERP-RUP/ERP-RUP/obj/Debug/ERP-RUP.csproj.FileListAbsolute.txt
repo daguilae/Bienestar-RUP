@@ -84,3 +84,16 @@ C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloMRP
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloSCM.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorSCM.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorMRP.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaLogica.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaDatos.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\InputKey.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaVistaFRM.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloFRM.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorFRM.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaVistaFRM.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloFRM.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorFRM.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\Polizas.dll
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\Polizas.pdb
+C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\obj\Debug\ERP-RUP.exe.config

@@ -16,6 +16,7 @@ namespace CapaVistaMRP
         public mantenimientoRegistroEmpleados(string user)
         {
             InitializeComponent();
+       
             usuario = user;
             string[] alias = { "cod_registro","cod_orden","cod_empleado","fecha", "hora_entrada", "Salida_almuerzo", "Entrada_almuerzo", "salida", "estado" };
             navegador1.asignarAlias(alias);
@@ -25,7 +26,7 @@ namespace CapaVistaMRP
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarAyuda("1");
             navegador1.asignarComboConTabla("produccion_encabezados", "cod_orden", 0);
-            navegador1.asignarComboConTabla("empleados", "nombre", 1);
+            navegador1.asignarComboConTabla("empleados", "id_empleado", 0);
             navegador1.asignarTabla("registro_horas_emp");
             navegador1.asignarNombreForm("");
         }
@@ -36,6 +37,12 @@ namespace CapaVistaMRP
             navegador1.ObtenerIdUsuario(usuario);
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
+      
+        }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "ayuda-MRP/AyudaMRP.chm", "AyudaMantenimientoEMP.html");
         }
     }
     }

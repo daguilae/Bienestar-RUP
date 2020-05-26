@@ -32,7 +32,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BTN_Sig = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_can = new System.Windows.Forms.Button();
             this.combo2 = new CapaVista.Combo();
             this.combo1 = new CapaVista.Combo();
@@ -55,8 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Txt_nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Txt_id = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,7 +77,7 @@
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Location = new System.Drawing.Point(12, 376);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(906, 268);
+            this.groupBox3.Size = new System.Drawing.Size(887, 268);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "información Empleados";
@@ -94,13 +92,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(894, 229);
+            this.dataGridView1.Size = new System.Drawing.Size(868, 229);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.BTN_Sig);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.Btn_can);
             this.groupBox2.Controls.Add(this.combo2);
             this.groupBox2.Controls.Add(this.combo1);
@@ -123,34 +120,32 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.Txt_nombre);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.Txt_id);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(16, 90);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(896, 280);
+            this.groupBox2.Size = new System.Drawing.Size(883, 280);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Empleados";
             // 
-            // BTN_Sig
+            // button1
             // 
-            this.BTN_Sig.BackColor = System.Drawing.Color.DodgerBlue;
-            this.BTN_Sig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BTN_Sig.BackgroundImage")));
-            this.BTN_Sig.Enabled = false;
-            this.BTN_Sig.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.BTN_Sig.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
-            this.BTN_Sig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
-            this.BTN_Sig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
-            this.BTN_Sig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_Sig.ForeColor = System.Drawing.Color.White;
-            this.BTN_Sig.Location = new System.Drawing.Point(716, 210);
-            this.BTN_Sig.Name = "BTN_Sig";
-            this.BTN_Sig.Size = new System.Drawing.Size(174, 57);
-            this.BTN_Sig.TabIndex = 33;
-            this.BTN_Sig.Text = "Siguiente";
-            this.BTN_Sig.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BTN_Sig.UseVisualStyleBackColor = false;
-            this.BTN_Sig.Click += new System.EventHandler(this.button1_Click);
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(444, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 75);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Nuevo ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Btn_can
             // 
@@ -162,18 +157,19 @@
             this.Btn_can.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_can.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_can.ForeColor = System.Drawing.Color.White;
-            this.Btn_can.Location = new System.Drawing.Point(521, 210);
+            this.Btn_can.Location = new System.Drawing.Point(729, 192);
             this.Btn_can.Name = "Btn_can";
-            this.Btn_can.Size = new System.Drawing.Size(184, 57);
+            this.Btn_can.Size = new System.Drawing.Size(141, 75);
             this.Btn_can.TabIndex = 31;
-            this.Btn_can.Text = "Cancela registo";
+            this.Btn_can.Text = "Cancelar";
             this.Btn_can.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_can.UseVisualStyleBackColor = false;
             this.Btn_can.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // combo2
             // 
-            this.combo2.Location = new System.Drawing.Point(521, 99);
+            this.combo2.Enabled = false;
+            this.combo2.Location = new System.Drawing.Point(521, 71);
             this.combo2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.combo2.Name = "combo2";
             this.combo2.Size = new System.Drawing.Size(339, 31);
@@ -181,7 +177,8 @@
             // 
             // combo1
             // 
-            this.combo1.Location = new System.Drawing.Point(521, 64);
+            this.combo1.Enabled = false;
+            this.combo1.Location = new System.Drawing.Point(521, 36);
             this.combo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.combo1.Name = "combo1";
             this.combo1.Size = new System.Drawing.Size(339, 38);
@@ -189,7 +186,9 @@
             // 
             // Txt_dire
             // 
-            this.Txt_dire.Location = new System.Drawing.Point(521, 170);
+            this.Txt_dire.Enabled = false;
+            this.Txt_dire.Location = new System.Drawing.Point(521, 142);
+            this.Txt_dire.MaxLength = 50;
             this.Txt_dire.Name = "Txt_dire";
             this.Txt_dire.Size = new System.Drawing.Size(339, 27);
             this.Txt_dire.TabIndex = 27;
@@ -197,7 +196,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(417, 169);
+            this.label18.Location = new System.Drawing.Point(426, 141);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(83, 21);
             this.label18.TabIndex = 26;
@@ -205,15 +204,18 @@
             // 
             // Txt_nit
             // 
-            this.Txt_nit.Location = new System.Drawing.Point(521, 137);
+            this.Txt_nit.Enabled = false;
+            this.Txt_nit.Location = new System.Drawing.Point(521, 109);
+            this.Txt_nit.MaxLength = 13;
             this.Txt_nit.Name = "Txt_nit";
             this.Txt_nit.Size = new System.Drawing.Size(339, 27);
             this.Txt_nit.TabIndex = 25;
+            this.Txt_nit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_nit_KeyPress);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(426, 132);
+            this.label17.Location = new System.Drawing.Point(426, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 21);
             this.label17.TabIndex = 24;
@@ -221,10 +223,13 @@
             // 
             // Txt_cui
             // 
-            this.Txt_cui.Location = new System.Drawing.Point(91, 166);
+            this.Txt_cui.Enabled = false;
+            this.Txt_cui.Location = new System.Drawing.Point(91, 131);
+            this.Txt_cui.MaxLength = 13;
             this.Txt_cui.Name = "Txt_cui";
             this.Txt_cui.Size = new System.Drawing.Size(318, 27);
             this.Txt_cui.TabIndex = 23;
+            this.Txt_cui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_cui_KeyPress);
             // 
             // Btn_genee
             // 
@@ -237,9 +242,9 @@
             this.Btn_genee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.Btn_genee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_genee.ForeColor = System.Drawing.Color.White;
-            this.Btn_genee.Location = new System.Drawing.Point(355, 210);
+            this.Btn_genee.Location = new System.Drawing.Point(576, 192);
             this.Btn_genee.Name = "Btn_genee";
-            this.Btn_genee.Size = new System.Drawing.Size(160, 57);
+            this.Btn_genee.Size = new System.Drawing.Size(147, 75);
             this.Btn_genee.TabIndex = 0;
             this.Btn_genee.Text = "Registrar ";
             this.Btn_genee.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -249,7 +254,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 172);
+            this.label16.Location = new System.Drawing.Point(6, 136);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 21);
             this.label16.TabIndex = 22;
@@ -257,23 +262,26 @@
             // 
             // Cbo_sex
             // 
+            this.Cbo_sex.Enabled = false;
             this.Cbo_sex.FormattingEnabled = true;
-            this.Cbo_sex.Location = new System.Drawing.Point(91, 129);
+            this.Cbo_sex.Location = new System.Drawing.Point(91, 99);
             this.Cbo_sex.Name = "Cbo_sex";
             this.Cbo_sex.Size = new System.Drawing.Size(318, 29);
             this.Cbo_sex.TabIndex = 21;
+            this.Cbo_sex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cbo_sex_KeyPress);
             // 
             // DTP_fechana
             // 
-            this.DTP_fechana.Location = new System.Drawing.Point(6, 229);
+            this.DTP_fechana.Enabled = false;
+            this.DTP_fechana.Location = new System.Drawing.Point(39, 225);
             this.DTP_fechana.Name = "DTP_fechana";
-            this.DTP_fechana.Size = new System.Drawing.Size(256, 27);
+            this.DTP_fechana.Size = new System.Drawing.Size(323, 27);
             this.DTP_fechana.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(426, 96);
+            this.label5.Location = new System.Drawing.Point(426, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 21);
             this.label5.TabIndex = 16;
@@ -282,7 +290,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(426, 65);
+            this.label6.Location = new System.Drawing.Point(426, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 21);
             this.label6.TabIndex = 14;
@@ -290,15 +298,17 @@
             // 
             // txt_correo
             // 
-            this.txt_correo.Location = new System.Drawing.Point(521, 31);
+            this.txt_correo.Enabled = false;
+            this.txt_correo.Location = new System.Drawing.Point(91, 164);
+            this.txt_correo.MaxLength = 45;
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(339, 27);
+            this.txt_correo.Size = new System.Drawing.Size(318, 27);
             this.txt_correo.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(426, 34);
+            this.label7.Location = new System.Drawing.Point(6, 165);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 21);
             this.label7.TabIndex = 12;
@@ -307,7 +317,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 201);
+            this.label8.Location = new System.Drawing.Point(109, 201);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(177, 21);
             this.label8.TabIndex = 10;
@@ -316,7 +326,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 134);
+            this.label4.Location = new System.Drawing.Point(6, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 21);
             this.label4.TabIndex = 8;
@@ -324,7 +334,9 @@
             // 
             // Txt_apellido
             // 
-            this.Txt_apellido.Location = new System.Drawing.Point(91, 94);
+            this.Txt_apellido.Enabled = false;
+            this.Txt_apellido.Location = new System.Drawing.Point(90, 67);
+            this.Txt_apellido.MaxLength = 45;
             this.Txt_apellido.Name = "Txt_apellido";
             this.Txt_apellido.Size = new System.Drawing.Size(318, 27);
             this.Txt_apellido.TabIndex = 7;
@@ -332,7 +344,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 93);
+            this.label3.Location = new System.Drawing.Point(4, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 21);
             this.label3.TabIndex = 6;
@@ -340,7 +352,9 @@
             // 
             // Txt_nombre
             // 
-            this.Txt_nombre.Location = new System.Drawing.Point(91, 59);
+            this.Txt_nombre.Enabled = false;
+            this.Txt_nombre.Location = new System.Drawing.Point(91, 34);
+            this.Txt_nombre.MaxLength = 45;
             this.Txt_nombre.Name = "Txt_nombre";
             this.Txt_nombre.Size = new System.Drawing.Size(318, 27);
             this.Txt_nombre.TabIndex = 5;
@@ -348,28 +362,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 62);
+            this.label2.Location = new System.Drawing.Point(5, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nombres";
-            // 
-            // Txt_id
-            // 
-            this.Txt_id.Enabled = false;
-            this.Txt_id.Location = new System.Drawing.Point(91, 26);
-            this.Txt_id.Name = "Txt_id";
-            this.Txt_id.Size = new System.Drawing.Size(318, 27);
-            this.Txt_id.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
             // 
             // groupBox1
             // 
@@ -380,7 +377,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(928, 82);
+            this.groupBox1.Size = new System.Drawing.Size(906, 82);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -393,12 +390,13 @@
             this.pictureBox2.Size = new System.Drawing.Size(65, 61);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(828, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(806, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 82);
             this.pictureBox1.TabIndex = 2;
@@ -409,11 +407,11 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(142, 23);
+            this.label15.Location = new System.Drawing.Point(210, 23);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(494, 39);
+            this.label15.Size = new System.Drawing.Size(462, 39);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Registro de Empleados nuevos";
+            this.label15.Text = "Registrar nuevos Empleados ";
             // 
             // statusStrip
             // 
@@ -424,7 +422,7 @@
             this.ProgressBar1});
             this.statusStrip.Location = new System.Drawing.Point(0, 648);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(930, 22);
+            this.statusStrip.Size = new System.Drawing.Size(908, 22);
             this.statusStrip.TabIndex = 14;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -451,16 +449,17 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(930, 670);
+            this.ClientSize = new System.Drawing.Size(908, 670);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "EmpleadosCon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "3011 - EmpleaodosCom";
+            this.Text = "3011 - Registro de empleados";
             this.Load += new System.EventHandler(this.Btn_agrecon_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -493,8 +492,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Txt_nombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox Txt_id;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox Txt_dire;
@@ -512,7 +509,7 @@
         private System.Windows.Forms.ToolStripStatusLabel LblUsuario;
         private System.Windows.Forms.ToolStripProgressBar ProgressBar1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button BTN_Sig;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -11,6 +11,7 @@ using CapaVistaCONTA;
 using CapaVistaSCM;
 using CapaVistaMRP;
 using CapaVistaHRM;
+using CapaVistaFRM;
 
 namespace ERP_RUP
 {
@@ -121,8 +122,7 @@ namespace ERP_RUP
 
 		private void FRMToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			MDI_CONTA conta = new MDI_CONTA();
-			conta.Show();
+			
 		}
 
 		private void MRPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -135,6 +135,18 @@ namespace ERP_RUP
 		{
 			MDI_SCM scm = new MDI_SCM();
 			scm.Show();
+		}
+
+		private void CONTABILIDADToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			MDI_CONTA conta = new MDI_CONTA();
+			conta.Show();
+		}
+
+		private void BANCOSToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			MDI_FRM conta = new MDI_FRM();
+			conta.Show();
 		}
 	}
 }
