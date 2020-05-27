@@ -461,5 +461,20 @@ namespace CapaVistaMRP
             poliza.AsignarColores(Color.FromArgb(165, 132, 197), Color.Black);
             
         }
+
+        private void ReporteDeProduccionToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            reporteProduccion frm = new reporteProduccion();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void SolicitudesSuministroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Solicitudes frm = new Solicitudes();
+            frm.MdiParent = this;
+            frm.Show();
+
+        }
     }
 }

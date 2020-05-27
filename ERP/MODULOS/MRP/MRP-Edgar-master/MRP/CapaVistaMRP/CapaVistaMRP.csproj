@@ -177,6 +177,12 @@
     <Compile Include="procesoProduccion.Designer.cs">
       <DependentUpon>procesoProduccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="producciones1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>producciones1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="productosProceso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     </Compile>
     <Compile Include="reporteProduccion.Designer.cs">
       <DependentUpon>reporteProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitudes.Designer.cs">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </Compile>
     <Compile Include="solicitudSuministro.cs">
       <SubType>Form</SubType>
@@ -268,6 +280,10 @@
     <EmbeddedResource Include="procesoProduccion.resx">
       <DependentUpon>procesoProduccion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="producciones1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>producciones1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="productosProceso.resx">
       <DependentUpon>productosProceso.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reporteProduccion.resx">
       <DependentUpon>reporteProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitudes.resx">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="solicitudSuministro.resx">
       <DependentUpon>solicitudSuministro.cs</DependentUpon>

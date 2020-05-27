@@ -17,5 +17,15 @@ namespace CapaVistaMRP
             InitializeComponent();
            
         }
+
+        private void CrystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReporteProduccion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

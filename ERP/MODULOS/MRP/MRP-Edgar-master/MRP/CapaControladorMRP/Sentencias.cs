@@ -46,6 +46,14 @@ namespace CapaControladorMRP
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.conexion());
             return dataTable;
         }
+        public OdbcDataAdapter llenaTbl12(string tabla)// metodo  que obtinene el contenio de una tabla
+        {
+            string[] camposDesc = obtenerCampos(tabla); //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro
+            string sql = "SELECT * FROM " + tabla + " WHERE estado = 1 || estado=0 ORDER BY " + camposDesc[0] + " DESC ;";
+            //SELECT * FROM tbl_bodega WHERE estado=1 ORDER BY kbodega DESC
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, con.conexion());
+            return dataTable;
+        }
         public OdbcDataAdapter llenaTbl(string tabla)// metodo  que obtinene el contenio de una tabla
         {
             string[] camposDesc = obtenerCampos(tabla); //string para almacenar los campos de OBTENERCAMPOS y utilizar el 1ro

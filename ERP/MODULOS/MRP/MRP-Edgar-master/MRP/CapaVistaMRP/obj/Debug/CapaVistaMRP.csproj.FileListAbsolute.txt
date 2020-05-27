@@ -146,3 +146,4 @@ C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\AxShockwave
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.reporteCostos.resources
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\Polizas.dll
 C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\bin\Debug\Polizas.pdb
+C:\Users\edgar\Documents\GitHub\MRP-Edgar\MRP\CapaVistaMRP\obj\Debug\CapaVistaMRP.Solicitudes.resources
