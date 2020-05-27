@@ -96,7 +96,6 @@ C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaModeloFRM
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\CapaControladorFRM.pdb
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\Polizas.dll
 C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\Polizas.pdb
-C:\Users\gganp\Desktop\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\obj\Debug\ERP-RUP.exe.config
 C:\Users\juan_\Desktop\Union Proyecto\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\ERP-RUP.exe.config
 C:\Users\juan_\Desktop\Union Proyecto\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\ERP-RUP.exe
 C:\Users\juan_\Desktop\Union Proyecto\Bienestar-RUP\ERP\ERP-RUP\ERP-RUP\bin\Debug\ERP-RUP.pdb
