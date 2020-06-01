@@ -29,6 +29,8 @@ namespace CapaVistaMRP
             Dtp_fechaHasta.Format = DateTimePickerFormat.Custom;
             Dtp_fechaHasta.CustomFormat = "yyyy-MM-dd";
 
+            Btn_imagen.Enabled = false;
+
         }
 
         public void estatics() {
@@ -69,11 +71,11 @@ namespace CapaVistaMRP
                 }
 
                 chartprod.Titles.Add("Productos mas Solicitados");
-           
 
 
 
 
+                Btn_imagen.Enabled = true;
 
             }
 
@@ -81,7 +83,7 @@ namespace CapaVistaMRP
 
 
                 MessageBox.Show("No hay Produccion en este rango de fechas", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                Btn_imagen.Enabled = false;
             }
            
         }
@@ -152,6 +154,7 @@ namespace CapaVistaMRP
         private void Btn_estadisticas_Click(object sender, EventArgs e)
         {
 
+           
             chartprod1.Series[0].Points.Clear();
             chartprod.Series[0].Points.Clear();
             chartprod1.Titles.Clear();
@@ -164,7 +167,6 @@ namespace CapaVistaMRP
 
         private void Btn_imagen_Click(object sender, EventArgs e)
         {
-            Process proceso = new Process();
             string fecha1 = DateTime.Now.ToString("yyyy-MM-dd");
 
             string nombre = InputDialog.mostrar("Nombre con el que desea guardar "); ;
@@ -175,10 +177,7 @@ namespace CapaVistaMRP
                 chartprod.SaveImage("graficos/pie"+nombre+"-"+fecha1+".png", ChartImageFormat.Png);
                 MessageBox.Show("Imagen almacenada con exito", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                proceso.StartInfo.FileName = "C:/Users/edgar/Documents/GitHub/MRP-Edgar/MRP/MDI_MRP/MDI_MRP/bin/Debug/graficos/pie"+nombre+"-"+fecha1+".png";
-                proceso.Start();
-                proceso.StartInfo.FileName = "C:/Users/edgar/Documents/GitHub/MRP-Edgar/MRP/MDI_MRP/MDI_MRP/bin/Debug/graficos/bars"+nombre+"-"+fecha1+".png";
-                proceso.Start();
+         
             }
             else {
 

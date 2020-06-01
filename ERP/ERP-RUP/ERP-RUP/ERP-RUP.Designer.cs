@@ -29,46 +29,38 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ERP_RUP));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.hRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.fRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.sCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.mRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.cONTABILIDADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bANCOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.sCMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.mRPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
 			// 
+			this.menuStrip.BackColor = System.Drawing.Color.White;
+			this.menuStrip.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
             this.hRMToolStripMenuItem,
             this.fRMToolStripMenuItem,
             this.sCMToolStripMenuItem,
-            this.mRPToolStripMenuItem,
-            this.seguridadToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.mRPToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(632, 24);
+			this.menuStrip.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+			this.menuStrip.Size = new System.Drawing.Size(948, 35);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "MenuStrip";
-			// 
-			// inicioToolStripMenuItem
-			// 
-			this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-			this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-			this.inicioToolStripMenuItem.Text = "Inicio";
 			// 
 			// hRMToolStripMenuItem
 			// 
 			this.hRMToolStripMenuItem.Name = "hRMToolStripMenuItem";
-			this.hRMToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+			this.hRMToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
 			this.hRMToolStripMenuItem.Text = "HRM";
 			this.hRMToolStripMenuItem.Click += new System.EventHandler(this.HRMToolStripMenuItem_Click);
 			// 
@@ -78,62 +70,56 @@
             this.cONTABILIDADToolStripMenuItem,
             this.bANCOSToolStripMenuItem});
 			this.fRMToolStripMenuItem.Name = "fRMToolStripMenuItem";
-			this.fRMToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+			this.fRMToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
 			this.fRMToolStripMenuItem.Text = "FRM";
 			this.fRMToolStripMenuItem.Click += new System.EventHandler(this.FRMToolStripMenuItem_Click);
-			// 
-			// sCMToolStripMenuItem
-			// 
-			this.sCMToolStripMenuItem.Name = "sCMToolStripMenuItem";
-			this.sCMToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.sCMToolStripMenuItem.Text = "SCM";
-			this.sCMToolStripMenuItem.Click += new System.EventHandler(this.SCMToolStripMenuItem_Click);
-			// 
-			// mRPToolStripMenuItem
-			// 
-			this.mRPToolStripMenuItem.Name = "mRPToolStripMenuItem";
-			this.mRPToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.mRPToolStripMenuItem.Text = "MRP";
-			this.mRPToolStripMenuItem.Click += new System.EventHandler(this.MRPToolStripMenuItem_Click);
-			// 
-			// seguridadToolStripMenuItem
-			// 
-			this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-			this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-			this.seguridadToolStripMenuItem.Text = "Seguridad";
-			// 
-			// ayudaToolStripMenuItem
-			// 
-			this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-			this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-			this.ayudaToolStripMenuItem.Text = "Ayuda";
 			// 
 			// cONTABILIDADToolStripMenuItem
 			// 
 			this.cONTABILIDADToolStripMenuItem.Name = "cONTABILIDADToolStripMenuItem";
-			this.cONTABILIDADToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.cONTABILIDADToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
 			this.cONTABILIDADToolStripMenuItem.Text = "CONTABILIDAD";
 			this.cONTABILIDADToolStripMenuItem.Click += new System.EventHandler(this.CONTABILIDADToolStripMenuItem_Click);
 			// 
 			// bANCOSToolStripMenuItem
 			// 
 			this.bANCOSToolStripMenuItem.Name = "bANCOSToolStripMenuItem";
-			this.bANCOSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.bANCOSToolStripMenuItem.Size = new System.Drawing.Size(238, 30);
 			this.bANCOSToolStripMenuItem.Text = "BANCOS";
 			this.bANCOSToolStripMenuItem.Click += new System.EventHandler(this.BANCOSToolStripMenuItem_Click);
 			// 
+			// sCMToolStripMenuItem
+			// 
+			this.sCMToolStripMenuItem.Name = "sCMToolStripMenuItem";
+			this.sCMToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
+			this.sCMToolStripMenuItem.Text = "SCM";
+			this.sCMToolStripMenuItem.Click += new System.EventHandler(this.SCMToolStripMenuItem_Click);
+			// 
+			// mRPToolStripMenuItem
+			// 
+			this.mRPToolStripMenuItem.Name = "mRPToolStripMenuItem";
+			this.mRPToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
+			this.mRPToolStripMenuItem.Text = "MRP";
+			this.mRPToolStripMenuItem.Click += new System.EventHandler(this.MRPToolStripMenuItem_Click);
+			// 
 			// ERP_RUP
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(632, 453);
+			this.BackColor = System.Drawing.Color.White;
+			this.BackgroundImage = global::ERP_RUP.Properties.Resources.LOGO_BIENESTAR_2;
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(948, 662);
 			this.Controls.Add(this.menuStrip);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.DoubleBuffered = true;
+			this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.IsMdiContainer = true;
 			this.MainMenuStrip = this.menuStrip;
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ERP_RUP";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "ERP_RUP";
+			this.Text = "ERP BIENESTAR";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.ERP_RUP_Load);
 			this.menuStrip.ResumeLayout(false);
@@ -147,13 +133,10 @@
 
 		private System.Windows.Forms.MenuStrip menuStrip;
 		private System.Windows.Forms.ToolTip toolTip;
-		private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hRMToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem mRPToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sCMToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fRMToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cONTABILIDADToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem bANCOSToolStripMenuItem;
 	}

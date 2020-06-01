@@ -32,16 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDI_MRP));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.gestionDeProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoProcesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoConfiguracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoInvetarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoUnidadDeMedidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesPendientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.productosEnProcesoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +47,7 @@
             this.seguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeCostosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.costosProduccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +66,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.vistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudesSuministroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_enProceso)).BeginInit();
@@ -88,6 +87,7 @@
             this.toolsMenu,
             this.reportesToolStripMenuItem,
             this.polizaToolStripMenuItem,
+            this.vistaToolStripMenuItem,
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -97,29 +97,10 @@
             // 
             // fileMenu
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSeparator3,
-            this.toolStripSeparator4,
-            this.toolStripSeparator5});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(81, 24);
             this.fileMenu.Text = "&Archivo";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(71, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(71, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(71, 6);
             // 
             // gestionDeProduccionToolStripMenuItem
             // 
@@ -128,8 +109,7 @@
             this.mantenimientoProcesosToolStripMenuItem,
             this.mantenimientoConfiguracionToolStripMenuItem,
             this.mantenimientoInvetarioToolStripMenuItem,
-            this.mantenimientoUnidadDeMedidaToolStripMenuItem,
-            this.productoToolStripMenuItem});
+            this.mantenimientoUnidadDeMedidaToolStripMenuItem});
             this.gestionDeProduccionToolStripMenuItem.Name = "gestionDeProduccionToolStripMenuItem";
             this.gestionDeProduccionToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.gestionDeProduccionToolStripMenuItem.Text = "Mantenimientos";
@@ -169,13 +149,6 @@
             this.mantenimientoUnidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(394, 26);
             this.mantenimientoUnidadDeMedidaToolStripMenuItem.Text = "4005 - Mantenimiento Unidad de Medida";
             this.mantenimientoUnidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.MantenimientoUnidadDeMedidaToolStripMenuItem_Click);
-            // 
-            // productoToolStripMenuItem
-            // 
-            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(394, 26);
-            this.productoToolStripMenuItem.Text = "1001 - Mantenimiento Producto ";
-            this.productoToolStripMenuItem.Click += new System.EventHandler(this.ProductoToolStripMenuItem_Click);
             // 
             // mantenimientosToolStripMenuItem
             // 
@@ -235,7 +208,8 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeCostosToolStripMenuItem});
+            this.reporteDeCostosToolStripMenuItem,
+            this.reporteDeProduccionToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -243,9 +217,16 @@
             // reporteDeCostosToolStripMenuItem
             // 
             this.reporteDeCostosToolStripMenuItem.Name = "reporteDeCostosToolStripMenuItem";
-            this.reporteDeCostosToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.reporteDeCostosToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.reporteDeCostosToolStripMenuItem.Text = "Reporte de Costos";
             this.reporteDeCostosToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeCostosToolStripMenuItem_Click);
+            // 
+            // reporteDeProduccionToolStripMenuItem
+            // 
+            this.reporteDeProduccionToolStripMenuItem.Name = "reporteDeProduccionToolStripMenuItem";
+            this.reporteDeProduccionToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.reporteDeProduccionToolStripMenuItem.Text = "Reporte de Produccion";
+            this.reporteDeProduccionToolStripMenuItem.Click += new System.EventHandler(this.ReporteDeProduccionToolStripMenuItem_Click_1);
             // 
             // polizaToolStripMenuItem
             // 
@@ -418,6 +399,21 @@
             this.timer2.Interval = 60000;
             this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
+            // vistaToolStripMenuItem
+            // 
+            this.vistaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.solicitudesSuministroToolStripMenuItem});
+            this.vistaToolStripMenuItem.Name = "vistaToolStripMenuItem";
+            this.vistaToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.vistaToolStripMenuItem.Text = "Vista";
+            // 
+            // solicitudesSuministroToolStripMenuItem
+            // 
+            this.solicitudesSuministroToolStripMenuItem.Name = "solicitudesSuministroToolStripMenuItem";
+            this.solicitudesSuministroToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.solicitudesSuministroToolStripMenuItem.Text = "4201 - Solicitudes Suministro";
+            this.solicitudesSuministroToolStripMenuItem.Click += new System.EventHandler(this.SolicitudesSuministroToolStripMenuItem_Click);
+            // 
             // MDI_MRP
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -453,9 +449,6 @@
 
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
@@ -475,7 +468,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoInvetarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasPorFechaToolStripMenuItem;
         private System.Windows.Forms.DataGridView Dgv_enProceso;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -491,6 +483,9 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDeCostosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem polizaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem costosProduccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeProduccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solicitudesSuministroToolStripMenuItem;
     }
 }
 

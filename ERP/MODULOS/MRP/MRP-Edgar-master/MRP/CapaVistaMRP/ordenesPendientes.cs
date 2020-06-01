@@ -323,7 +323,7 @@ namespace CapaVistaMRP
                             var umi = dt.Rows[i]["umi"].ToString();
 
                         string conv = mo.consulta("select cantidad2 from unidades_medida where unidad1 = '"+umr+"' and unidad2 = '"+umi+"' and estado = 1;");
-                        if (conv != "" || conv != null)
+                        if (conv != " ")
                         {
                             double conv2 = Convert.ToDouble(conv);
 

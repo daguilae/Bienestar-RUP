@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaModeloMRP;
+using System.Diagnostics;
 
 namespace CapaVistaMRP
 {
@@ -171,8 +172,10 @@ namespace CapaVistaMRP
         }
         private void Button1_Click(object sender, EventArgs e)
         {
+            Process proceso = new Process();
 
-            cutmp();
+            proceso.StartInfo.FileName = "/Users/edgar/Documents/GitHub/MRP-Edgar/MRP/MDI_MRP/MDI_MRP/bin/Debug/graficos/barspo-2020-05-25.png";
+            proceso.Start();
 
 
 

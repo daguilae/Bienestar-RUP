@@ -64,6 +64,13 @@ namespace CapaModeloMRP
             dt.Fill(table);
             return table;
         }
+        public DataTable consultaLogica12(string tabla)  //obtener datos de la consulta
+        {
+            OdbcDataAdapter dt = sn.llenaTbl12(tabla);
+            DataTable table = new DataTable();
+            dt.Fill(table);
+            return table;
+        }
         public int contarCampos(string tabla)
         {
             return sn.contarAlias(tabla);

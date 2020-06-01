@@ -48,3 +48,28 @@ C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Conta\FRM\DLLS\Seguridad\CapaDiseno\obj\D
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Conta\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.CopyComplete
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Conta\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.dll
 C:\Users\gganp\Desktop\ERP-RUP\FRM\FRM-Conta\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.pdb
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.pdb
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDatos.dll
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaLogica.dll
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaDatos.pdb
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\bin\Debug\CapaLogica.pdb
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csprojAssemblyReference.cache
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_aplicaciones.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_aplicaciones.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_aplicaciones_perfiles.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_asignacion_perfiles.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_cambioclave.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_login.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_loginAlterno.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_modulos.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_mostrar_bitacora.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_perfiles_mantenimiento.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.frm_usuarios.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.MDI_Seguridad.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.Properties.Resources.resources
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.GenerateResource.cache
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.CoreCompileInputs.cache
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.csproj.CopyComplete
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.dll
+C:\Users\juan_\Desktop\Union 2\Bienestar-RUP\ERP\MODULOS\FRM\FRM-Conta-master\FRM\DLLS\Seguridad\CapaDiseno\obj\Debug\CapaDiseno.pdb
